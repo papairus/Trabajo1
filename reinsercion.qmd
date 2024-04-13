@@ -20,11 +20,11 @@ Bajo el criterio de adaptación, la reinserción social, opera principalmente co
 
 ### Funcionarios.
 
-Los/as funcionarios penitenciarios son los encargados de la gestión y administración al interior de las cárceles, su labor abarca desde seguridad y control del establecimiento hasta cuidado de los/as internos/as, el papel fundamental que desempeñan debe contar con una capacitación que abogue al respeto de DD.HH y al cumplimiento de los objetivos del sistema judicial penal, debido a que “la experiencia carcelaria del interno se verá influida por las conceptualizaciones que los funcionarios manejen y trasmitan, estos constructos facilitan o dificultan las oportunidades de relaciones sociales (Gergen, 2006 en \> @ahumadaSignificadosReinsercionSocial2015 )  y tienden a objetivar sus actuaciones en la vida cotidiana (Berger &Luckmann, 2008 en \> @ahumadaSignificadosReinsercionSocial2015) Por otro lado, “el interno deberá ajustarse al modelo objetivo e ideal de sujeto (Tijoux, 2002; Tsukame, 2003) que el funcionario construye a partir de la reinserción social y el sometimiento a criterios de evaluación que miden este grado de ajuste”. \[@ahumadaSignificadosReinsercionSocial2015\]
+Los/as funcionarios penitenciarios son los encargados de la gestión y administración al interior de las cárceles, su labor abarca desde seguridad y control del establecimiento hasta cuidado de los/as internos/as, el papel fundamental que desempeñan debe contar con una capacitación que abogue al respeto de DD.HH y al cumplimiento de los objetivos del sistema judicial penal, debido a que “la experiencia carcelaria del interno se verá influida por las conceptualizaciones que los funcionarios manejen y trasmitan, estos constructos facilitan o dificultan las oportunidades de relaciones sociales (Gergen, 2006 en \> @ahumadaSignificadosReinsercionSocial2015 )  y tienden a objetivar sus actuaciones en la vida cotidiana (Berger &Luckmann, 2008 en \> @ahumadaSignificadosReinsercionSocial2015) Por otro lado, “el interno deberá ajustarse al modelo objetivo e ideal de sujeto (Tijoux, 2002; Tsukame, 2003) que el funcionario construye a partir de la reinserción social y el sometimiento a criterios de evaluación que miden este grado de ajuste”. [@ahumadaSignificadosReinsercionSocial2015]
 
 Para finalizar, Según Sanhueza [@sanhuezaCarcelesConcesionadasChile2017] : “el porcentaje de internos que han reportado maltrato de los funcionarios penitenciarios; con el acceso y calidad a servicios de salud; y con el acceso y calidad de la oferta de intervención psicosocial para los internos/as” sería mayor en cárceles concesionadas que en estales, estos resultados destacan la ineficiencia del sistema carcelario privado en Chile.
 
-#### Reincidencia delictiva 
+#### Reincidencia delictiva
 
 La realidad de las cárceles chilenas muestra que cerca de la mitad de las personas privadas de libertad reinciden (Morales et al. 2013 en \> [@guillermosanhuezaExplorandoDesempenoMoral2019] ), por la cual se deduce que la reinserción social de los internos no ha resultado efectiva en tanto no evita que continúen con conductas delictuales”. \> [@guillermosanhuezaExplorandoDesempenoMoral2019]
 
@@ -36,9 +36,9 @@ Una de las formas de abordar la reincidencia delictiva es por medio del desempe�
 
 b\. *Educación*
 
-“Los programas de reinserción social buscan promover que quienes hayan enfrentado la situación de privación de libertad puedan acceder a un mejor desarrollo social, laboral e individual. Es por esta razón, precisamente, que se crean las escuelas dentro de los centros carcelarios.” [ \> @universidadmetropolitanadecienciasdelaeducacionProgramaIntegracionContexto2022] . La educación es un componente crucial para reducir la reincidencia delictiva. La implementación de programas que abarquen desde alfabetización hasta educación superior por cruciales para fomentar la cohesión social.
+“Los programas de reinserción social buscan promover que quienes hayan enfrentado la situación de privación de libertad puedan acceder a un mejor desarrollo social, laboral e individual. Es por esta razón, precisamente, que se crean las escuelas dentro de los centros carcelarios.” [\> @universidadmetropolitanadecienciasdelaeducacionProgramaIntegracionContexto2022] . La educación es un componente crucial para reducir la reincidencia delictiva. La implementación de programas que abarquen desde alfabetización hasta educación superior por cruciales para fomentar la cohesión social.
 
-## infraestructura.
+## Infraestructura.
 
 “Como medida para mejorar la infraestructura y aminorar el hacinamiento en las cárceles estatales surgen las cárceles concesionarias, las cuales deberían cumplir las funciones anteriormente nombradas junto a la contratación de personal y administración, entre ellos la de proyectos de reinserción social.”[@sanhuezaCarcelesConcesionadasChile2017]
 
@@ -46,6 +46,6 @@ Según el estudio de \> [@sanhuezaCarcelesConcesionadasChile2017] los/as recluso
 
 La transformación de la infraestructura es un motor de integración penitenciaria desde el punto de vista espacial debido a que influye directamente en la calidad de vida de los/as reclusos/as.
 
-##### Relevancia 
+##### Relevancia
 
 Para concluir, propiciar un ambiente psicosocial optimo, que garantice la integración y reinserción social de quienes cumplen o cumplieron condena es sumamente relevante para la reducción de la criminalidad y la construcción del bienestar social. Lamentablemente en el presente proyecto de investigación no hice uso de bibliografía con enfoque de género debido a la poca existencia de material actualizado que refiera al tema, pero junto a los puntos contemplados anteriormente se debe agregar considerar una reinserción social integra y con enfoque de género, el cual propicie el desarrollo de la maternidad y el vinculo madre e hijo/a.
