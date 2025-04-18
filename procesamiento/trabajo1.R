@@ -22,7 +22,8 @@ options(scipen = 999) # para desactivar notacion cientifica
 
 library(pacman)
 library(haven)
-data <- read_sav("../Input/data_orig/BBDD.sav")
+data <- read_sav("Input/data_orig/BBDD.sav")
+
 
 #Explorando la bbdd.
 dim(data) # dimension de la base
@@ -258,13 +259,13 @@ tabla_final <- media_ee %>%
   select(
     sexo_migrante, n, porcentaje,
     media, mediana, error_est, sd)
+# Guarda la tabla ya creada en un archivo RDS
+saveRDS(tabla_final, file = "output/tabla_final.rds")
 
 
 ## Graficos univariados --------------------------------------------------------
 
 #Grafico 1 con ponderación: Segun Sexo 
-
-
 proc_data_expand <- proc_data %>%
   mutate(weight = round(wgt_alu)) %>% # redondear para replicar
   filter(!is.na(victim_vida_cuenta)) %>%
@@ -284,6 +285,14 @@ ggplot(proc_data_expand, aes(x = sexo, y = victim_vida_cuenta, fill = sexo)) +
     legend.position = "none"
   ) +
   scale_fill_brewer(palette = "PRGn")
+g1 <- ggplot(proc_data_expand, aes(x = sexo, y = victim_vida_cuenta, fill = sexo)) +
+  geom_boxplot(outlier.colour = "purple", outlier.size = 1, alpha = 0.7) +
+  labs(title = "Boxplot con ponderación según Sexo", x = "Sexo", y = "Victimizaciones") +
+  theme_minimal() +
+  theme(legend.position = "none") +
+  scale_fill_brewer(palette = "PRGn")
+ggsave("output/grafico_sexo.png", plot = g1, width = 7, height = 5, dpi = 300)
+
 
 # Grafico 2 con ponderación: Segun Origen
 
@@ -307,6 +316,18 @@ ggplot(proc_data_expand, aes(x = migrante, y = victim_vida_cuenta, fill = migran
     legend.position = "none"
   ) +
   scale_fill_brewer(palette = "PRGn")
+g2 <- ggplot(proc_data_expand, aes(x = migrante, y = victim_vida_cuenta, fill = migrante)) +
+  geom_boxplot(outlier.colour = "purple", outlier.size = 1, alpha = 0.7) +
+  labs(
+    title = "Boxplot con ponderación según Origen",
+    x = "Origen",
+    y = "Número de victimizaciones en la vida"
+  ) +
+  theme_minimal(base_size = 12) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1), legend.position = "none") +
+  scale_fill_brewer(palette = "PRGn")
+
+ggsave("output/grafico_migrante.png", plot = g2, width = 7, height = 5, dpi = 300)
 
 ## Grafico 3  con ponderación:Segun sexo y origen
 
@@ -336,5 +357,20 @@ ggplot(proc_data_expand, aes(x = sexo_migrante, y = victim_vida_cuenta, fill = s
   ) +
   scale_fill_brewer(palette = "PRGn")
 
+g3 <- ggplot(proc_data_expand, aes(x = sexo_migrante, y = victim_vida_cuenta, fill = sexo_migrante)) +
+  geom_boxplot(outlier.colour = "purple", outlier.size = 1, alpha = 0.7) +
+  labs(
+    title = "Boxplot con ponderación según Sexo y Origen",
+    x = "Sexo y Origen",
+    y = "Número de victimizaciones en la vida"
+  ) +
+  theme_minimal(base_size = 12) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1), legend.position = "none") +
+  scale_fill_brewer(palette = "PRGn")
+
+ggsave("output/grafico_sexo_migrante.png", plot = g3, width = 7, height = 5, dpi = 300)
+
+
 # Save -------------------------------------------------------------------------
-save(proc_data, file = "../procesamiento/proc_data.RData")
+
+save(proc_data, file = "procesamiento/Trabajo1.RData")

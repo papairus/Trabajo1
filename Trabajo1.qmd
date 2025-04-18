@@ -1,0 +1,58 @@
+---
+title: "Cuando el género y la migración se cruzan: una mirada a la victimización en NNA´s"
+author: "Baeza, Muñoz, pérez"
+format: html
+editor: visual
+bibliography: R-zotero.bib
+link-citations: true
+---
+
+## Presentacion del caso:
+
+## Desarrollo
+
+### 
+
+```{r}
+# Cargar datos procesados
+load("procesamiento/Trabajo1.RData")
+
+```
+
+### Tabla descriptiva ponderada
+
+```{r}
+# Cargar tabla ya guardada
+tabla_final <- readRDS("output/tabla_final.rds")
+
+# Mostrar tabla
+knitr::kable(tabla_final, digits = 2, caption = "Tabla 1. Estadísticos descriptivos ponderados por grupo sexo_migrante")
+
+```
+
+The `echo: false` option disables the printing of code (only output is displayed
+
+#### Graficos e interpretación
+
+```{r}
+### Gráfico 1: Boxplot según Sexo
+knitr::include_graphics("output/grafico_sexo.png")
+```
+
+).
+
+```{r}
+### Gráfico 2: Boxplot según Origen Migrante
+
+knitr::include_graphics("output/grafico_migrante.png")
+
+```
+
+```{r}
+
+### Gráfico 3: Boxplot según Sexo y Origen
+
+knitr::include_graphics("output/grafico_sexo_migrante.png")
+```
+
+##### Conclusión
