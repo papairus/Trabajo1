@@ -1,27 +1,91 @@
 ---
-title: "Trabajo 1"
+title: "Cuando el género y la migración se cruzan: experiencias de victimización en niñ-s y adolescentes"
 author: "Baeza, Benjamin - Muñoz, Constanza - Pérez, Alem"
 format: html
 editor: visual
+bibliography: R.bib
+link-citations: true
 ---
 
-## Quarto
+## Presentación del caso y BBDD
 
-Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
-
-## Running Code
-
-When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
+En 2023 se aplica la Segunda Encuesta Nacional de Polivictimización en NNA´s, desde marzo a agosto se realizaron 13.385 encuestas autoaplicadas a estudiantes de 7° básico a 3° medio en establecimientos educacionales de las 16 regiones del país, de todas las dependencias administrativas. Tiene como objetivo evaluar los niveles de victimización de los NNA en distintos entornos (escolar, familiar, social), proporcionando una visión detallada sobre las formas de violencia que enfrentan estos jóvenes, así como sus condiciones sociales y culturales. Cuenta con un total de 239 variables.
 
 ```{r}
-1 + 1
+library(knitr)
+library(kableExtra)
+
+tabla_final %>%
+  kable(digits = 2, caption = "Tabla 1. Estadísticos descriptivos ponderados por grupo sexo_migrante") %>%
+  kable_styling(full_width = FALSE, position = "center")
+
+
 ```
 
 You can add options to executable code like this
 
 ```{r}
-#| echo: false
-2 * 2
+proc_data_expand <- proc_data %>%
+  mutate(weight = round(wgt_alu)) %>% # redondear para replicar
+  filter(!is.na(victim_vida_cuenta)) %>%
+  uncount(weights = weight) # expandir según pesos
+	library(ggplot2)
+
+ggplot(proc_data_expand, aes(x = sexo, y = victim_vida_cuenta, fill = sexo)) +
+  geom_boxplot(outlier.colour = "purple", outlier.size = 1, alpha = 0.7) +
+  labs(
+    title = "Boxplot con ponderación según Sexo",
+    x = "Distinción Sexo",
+    y = "Número de victimizaciones en la vida"
+  ) +
+  theme_minimal(base_size = 12) +
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1),
+    legend.position = "none"
+  ) +
+  scale_fill_brewer(palette = "PRGn")
 ```
 
-The `echo: false` option disables the printing of code (only output is displayed).
+```{r}
+proc_data_expand <- proc_data %>%
+  mutate(weight = round(wgt_alu)) %>% # redondear para replicar
+  filter(!is.na(victim_vida_cuenta)) %>%
+  uncount(weights = weight) # expandir según pesos
+	library(ggplot2)
+
+ggplot(proc_data_expand, aes(x = migrante, y = victim_vida_cuenta, fill = migrante)) +
+  geom_boxplot(outlier.colour = "purple", outlier.size = 1, alpha = 0.7) +
+  labs(
+    title = "Boxplot con ponderación segun origen",
+    x = "Origen",
+    y = "Número de victimizaciones en la vida"
+  ) +
+  theme_minimal(base_size = 12) +
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1),
+    legend.position = "none"
+  ) +
+  scale_fill_brewer(palette = "PRGn")
+```
+
+```{r}
+proc_data_expand <- proc_data %>%
+  mutate(weight = round(wgt_alu)) %>% # redondear para replicar
+  filter(!is.na(victim_vida_cuenta)) %>%
+  uncount(weights = weight) # expandir según pesos
+	library(ggplot2)
+
+ggplot(proc_data_expand, aes(x = sexo_migrante, y = victim_vida_cuenta, fill = sexo_migrante)) +
+  geom_boxplot(outlier.colour = "purple", outlier.size = 1, alpha = 0.7) +
+  labs(
+    title = "Boxplot con ponderación",
+    x = "Distinción Sexo - origen",
+    y = "Número de victimizaciones en la vida"
+  ) +
+  theme_minimal(base_size = 12) +
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1),
+    legend.position = "none"
+  ) +
+  scale_fill_brewer(palette = "PRGn")
+```
