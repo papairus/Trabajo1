@@ -1,3 +1,0 @@
-El archivo "data.Rdata" se genera con el script llamado "01proc_data.R" de la carpeta procesamiento.
-
-Para que se muestra el informe, en esta carpeta debe estar el archivo data.RData.  
