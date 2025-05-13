@@ -310,7 +310,24 @@ stopifnot(all(paste0("PG_", 1:10) %in% names(proc_data)))
 # Crear escala de Depresión
 	depresion_items <- proc_data %>%
 	  select(PH_1:PH_18)
-	
+
+#verificacion de que sea numerico 
+proc_data <- proc_data %>%
+	mutate(across(PH_1:PH_18, ~as.numeric(.)))
+
+#invertir items negativos	
+proc_data <- proc_data %>%
+	mutate(
+		PH_2 = 4 - PH_2,
+		PH_3 = 4 - PH_3,
+		PH_4 = 4 - PH_4,
+		PH_10 = 4 - PH_10,
+		PH_14 = 4 - PH_14,
+		PH_15 = 4 - PH_15,
+		PH_17 = 4 - PH_17,
+		PH_18 = 4 - PH_18
+	)
+
 	# Suma total (1 = nunca, 2 = a veces, 3 = siempre)
 	depresion_escala <- depresion_items %>%
 	  mutate(PH_depresion = rowSums(., na.rm = TRUE)) %>%
