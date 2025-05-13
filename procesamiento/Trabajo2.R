@@ -394,10 +394,12 @@ sjPlot::plot_scatter(proc_data, sexo_migrante, PH_depresion)
 
 
 #Estimacion de correlacion -----------------------------------------------------
-cor(proc_data_escalas)
+cor(escalas_completas)
 
 #Alfa de cobranch: analizar solo PG_AUTOESTIMA Y PH_DEPRESION-----------------
-psych::alpha(proc_data_numeric)
+psych::alpha(autoestima_items)
+
+psych::alpha(depresion_items)
 
 
 
