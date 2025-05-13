@@ -6,6 +6,8 @@
 
 rm(list = ls()) # para limpiar el entorno de trabajo
 
+
+
 pacman::p_load(knitr,
 							 labelled,
 							 srvyr,
