@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.6.42">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -84,10 +84,10 @@ div.csl-indent {
 <script src="Trabajo1_files/libs/quarto-html/tippy.umd.min.js"></script>
 <script src="Trabajo1_files/libs/quarto-html/anchor.min.js"></script>
 <link href="Trabajo1_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="Trabajo1_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="Trabajo1_files/libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="Trabajo1_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="Trabajo1_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="Trabajo1_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="Trabajo1_files/libs/bootstrap/bootstrap-1bc8a17f135ab3d594c857e9f48e611b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 
 
 </head>
@@ -138,7 +138,7 @@ div.csl-indent {
 <p>La migración, tanto regular como irregular, tiene entre sus expresiones más sensibles la migración infantil. Esta situación trae consigo una serie de contingencias que deben ser abordadas, analizadas y comprendidas en profundidad, especialmente cuando se trata de niños, niñas y adolescentes en situación migratoria irregular, quienes muchas veces no pueden ejercer plenamente sus derechos y quedan expuestos a vulneraciones sistemáticas dentro de una sociedad diseñada por y para los adultos.</p>
 <p>Con el tiempo, esta problemática se ha intensificado. El desarrollo de nuevos fenómenos sociales asociados a la migración ha incrementado situaciones de discriminación escolar, estigmatización hacia personas migrantes, y múltiples vulneraciones que afectan directamente el ejercicio de los derechos de las infancias. Esto ha derivado en graves casos de explotación y violencia, como la esclavitud infantil de niños y niñas que no están registrados en el sistema, situación que recientemente se evidenció en el caso de una niña de nacionalidad boliviana.</p>
 <p>La violencia y la polivictimización de las infancias constituyen una de las problemáticas más críticas en Chile. Diversos estudios han evidenciado altos niveles de violencia en la vida cotidiana de niños y niñas. Uno de los hallazgos más impactantes se expresa en el siguiente dato:</p>
-<p>“Diversos estudios constatan que en Chile niños y niñas de manera general padecen malos tratos: un 70% de niñas y niños de distintos estratos socioeconómicos sufre algún tipo de violencia en sus familias; la mitad (51,5%) sufre violencia física, un cuarto (25,9%) violencia física grave y un bajo porcentaje (7,3%-8,7%) declara haber sufrido abuso sexual, principalmente las niñas (75%)” <span class="citation" data-cites="galaz2019">(<a href="#ref-galaz2019" role="doc-biblioref">Galaz et al. 2019, p.&nbsp;1</a>)</span></p>
+<p>“Diversos estudios constatan que en Chile niños y niñas de manera general padecen malos tratos: un 70% de niñas y niños de distintos estratos socioeconómicos sufre algún tipo de violencia en sus familias; la mitad (51,5%) sufre violencia física, un cuarto (25,9%) violencia física grave y un bajo porcentaje (7,3%-8,7%) declara haber sufrido abuso sexual, principalmente las niñas (75%)” <span class="citation" data-cites="galaz2019">(<a href="#ref-galaz2019" role="doc-biblioref">Galaz et al. 2019</a>)</span></p>
 <p>En este contexto de polivictimización, nos proponemos analizar la experiencia de vulneración y victimización que atraviesan las infancias en Chile, ofreciendo una panorámica general que permita comprender cómo ha evolucionado esta situación en los últimos años. Asimismo, buscamos observar el caso específico de niños, niñas y adolescentes migrantes, quienes, además de enfrentarse a diversas formas de maltrato que muchas veces se han naturalizado, también son víctimas de violencia simbólica expresada en prácticas de discriminación racial e institucional.</p>
 <section id="sobre-la-base-de-datos-y-construcción-de-variables" class="level3">
 <h3 class="anchored" data-anchor-id="sobre-la-base-de-datos-y-construcción-de-variables">Sobre la base de datos y construcción de variables</h3>
@@ -432,8 +432,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -544,7 +542,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {
