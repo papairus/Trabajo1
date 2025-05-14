@@ -311,13 +311,48 @@ proc_data <- proc_data %>%
   mutate(PG_autoestima = autoestima_escala$PG_autoestima)
 
 # Consistencia interna
-psych::alpha(autoestima_invertida))
+psych::alpha(autoestima_invertida)
 
 ## Resultado: Alfa de Cronbach = 0.84 → Muy buena consistencia interna ------------------
 
 
 # CONSTRUCCIÓN ESCALA DE DEPRESIÓN (BIRLESON) -------------------------------------
 proc_data <- proc_data %>% mutate(across(PH_1:PH_18, ~as.numeric(.)))
+
+
+# Crear escala de Depresión
+	depresion_items <- proc_data %>%
+	  select(PH_1:PH_18)
+
+#verificacion de que sea numerico 
+proc_data <- proc_data %>%
+	mutate(across(PH_1:PH_18, ~as.numeric(.)))
+
+#invertir items negativos	
+proc_data <- proc_data %>%
+  mutate(
+    PH_2 = 4 - PH_2,
+    PH_3 = 4 - PH_3,
+    PH_4 = 4 - PH_4,
+    PH_10 = 4 - PH_10,
+    PH_14 = 4 - PH_14,
+    PH_15 = 4 - PH_15,
+    PH_17 = 4 - PH_17,
+    PH_18 = 4 - PH_18
+  )
+
+
+	# Suma total (1 = nunca, 2 = a veces, 3 = siempre)
+	depresion_escala <- depresion_items %>%
+	  mutate(PH_depresion = rowSums(., na.rm = TRUE)) %>%
+	  mutate(PH_depresion_dic = ifelse(PH_depresion >= 19, 1, 0))  # 1 = posibles síntomas depresivos
+	
+	# Agregar variables a base principal
+	proc_data <- proc_data %>%
+	  mutate(
+	    PH_depresion = depresion_escala$PH_depresion,
+	    PH_depresion_dic = depresion_escala$PH_depresion_dic)
+
 
 proc_data <- proc_data %>%
   mutate(
@@ -338,8 +373,7 @@ proc_data <- proc_data %>%
 
 #Alfa de cronbach = Escala depresion ---------------------------------------------
 # Consistencia interna de la escala de Depresión
-depresion_items_corregidos <- proc_data %>% select(PH_1:PH_18)
-psych::alpha(depresion_items_corregidos)
+psych::alpha(depresion_invertidos, check.keys = TRUE)
 
 # Evaluación de consistencia interna de la escala de Depresión Infantil de Birleson
 # Ítems invertidos: PH_2, PH_3, PH_4, PH_10, PH_14, PH_15, PH_17, PH_18 (según el manual)
@@ -385,15 +419,18 @@ ggplot(escalas_con_grupo, aes(x = PG_autoestima, y = victimizaciones, color = se
   labs(title = "Relación entre Autoestima y Victimizaciones según Grupo",
        x = "Autoestima", y = "Victimizaciones")
 
+# Guardar los gráficos de correlación ---------------------------------------------------------
+png("../output/grafico_correlacion.png", width = 800, height = 600)  # Cambia el tamaño según lo necesites
+cor_matrix_plot <- ggcorrplot(cor_matrix, lab = TRUE, type = "lower", method = "circle",
+                              colors = c("red", "white", "blue"), title = "Correlaciones entre escalas")
+print(cor_matrix_plot)
+dev.off()  # Cierra el dispositivo gráfico
 
-
-
-
-
-
-
-
-
+# Para el diagnóstico de regresión
+png("../output/diagnostico_regresion.png", width = 800, height = 600)
+par(mfrow = c(2, 2))  # Acomoda los gráficos en una cuadrícula de 2x2
+plot(modelo_vic_control)
+dev.off()  # Cierra el dispositivo gráfico
 
 
 
