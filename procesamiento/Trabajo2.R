@@ -6,7 +6,7 @@
 
 rm(list = ls()) # para limpiar el entorno de trabajo
 
-
+install.packages("pacman")
 
 pacman::p_load(knitr,
 							 labelled,
@@ -28,12 +28,13 @@ pacman::p_load(knitr,
 							 survey, 
 							 kableExtra,
 							 GGally,
-							 corrplot)
+							 corrplot,
+							 ggcorrplot)
 
 options(scipen = 999) # para desactivar notacion cientifica
 
 library(pacman)
-library(survey)
+library(ggcorrplot)
 
 
 data <- read_sav("../input/data_orig/BBDD.sav")
@@ -203,29 +204,20 @@ nest = TRUE)
 # Digitales: PF_1, PF_2
 
 
+# CONSTRUCCIÓN DE ÍNDICE DE VICTIMIZACIONES ---------------------------------------
 indice_vj <- proc_data %>%
   rowwise() %>%
   mutate(
-    delitos = mean(c_across(c(PA_1:PA_7)), na.rm = TRUE),
-    cuidadores = mean(c_across(c(PB_1:PB_4)), na.rm = TRUE),
-    pares = mean(c_across(c(PC_1:PC_5)), na.rm = TRUE),
-    sexual = mean(c_across(c(PD_1:PD_7)), na.rm = TRUE),
-    entornos = mean(c_across(c(PE_1:PE_7)), na.rm = TRUE),
-    digitales = mean(c_across(c(PF_1:PF_2)), na.rm = TRUE),
-    indice_vj = mean(c(delitos, cuidadores, pares, sexual, entornos, digitales), na.rm = TRUE)
+    delitos = mean(c_across(PA_1:PA_7), na.rm = TRUE),
+    cuidadores = mean(c_across(PB_1:PB_4), na.rm = TRUE),
+    pares = mean(c_across(PC_1:PC_5), na.rm = TRUE),
+    sexual = mean(c_across(PD_1:PD_7), na.rm = TRUE),
+    entornos = mean(c_across(PE_1:PE_7), na.rm = TRUE),
+    digitales = mean(c_across(PF_1:PF_2), na.rm = TRUE),
+    victimizaciones = mean(c(delitos, cuidadores, pares, sexual, entornos, digitales), na.rm = TRUE)
   ) %>%
-  ungroup()
-
-
-
- indice_vj = indice_vj %>%
-  rowwise() %>%
-  mutate(victimizaciones = mean(c(delitos, cuidadores, pares, sexual, entornos, digitales), na.rm = TRUE)) %>%
-  ungroup()
-
- datos_sin_na <- indice_vj %>%
-  filter(!is.na(victimizaciones))
-
+  ungroup() %>%
+  mutate(polivict_vida = ifelse(victimizaciones > quantile(victimizaciones, 0.9, na.rm = TRUE), "sí", "no"))
 
 #¿Cuál es el porcentaje en el cual estas victmizaciones cobran el sentido de polivictimizacion?---------
 # Los indicadores de polivictimización se construyeron de acuerdo con las 
@@ -260,6 +252,8 @@ indice_vj <- indice_vj %>%
 summary(indice_vj$victimizaciones) # Resumen
 
 
+# ESCALAS: -----------------------------------------------------------------------
+
 # Variable de escala de autoestima y escala de depresión ----------------------
 # El siguiente parrafo fue extraido del manual de codigos de la BBDD (pg 9 - 10)
 #Las escalas de autoestima y escalas de depresión requirieron la construcción 
@@ -280,124 +274,126 @@ summary(indice_vj$victimizaciones) # Resumen
 # depresivos, y de 0 a 18 sin síntomas depresivos (MINSAL, 2013),
 # denominando a la variable en la base de datos PH_depresion_dic.
 
+# CONSTRUCCIÓN ESCALA DE AUTOESTIMA (ROSENBERG) -----------------------------------
+autoestima_items <- proc_data %>% select(PG_1:PG_10)
 
-#Creación escala Autoestima -----------------------------------------------------
-# Crear escala de Autoestima
-autoestima_items <- proc_data %>%
-  select(PG_1:PG_10)
-
-# Ítems negativos según Rosenberg: PG_2, PG_5, PG_6, PG_8, PG_9
 autoestima_escala <- autoestima_items %>%
   mutate(
     PG_2 = 6 - PG_2,
     PG_5 = 6 - PG_5,
     PG_6 = 6 - PG_6,
     PG_8 = 6 - PG_8,
-    PG_9 = 6 - PG_9
-  ) %>%
-  mutate(PG_autoestima = rowSums(., na.rm = TRUE))
+    PG_9 = 6 - PG_9,
+    PG_autoestima = rowSums(., na.rm = TRUE))
 
-# Agregar la variable a tu base principal
 proc_data <- proc_data %>%
   mutate(PG_autoestima = autoestima_escala$PG_autoestima)
 
-# Asegurarse de que todos los PG_1:PG_10 están en la base
-stopifnot(all(paste0("PG_", 1:10) %in% names(proc_data)))
 
-#Escala Depresion --------------------------------------------------------------
+# CONSISTENCIA INTERNA (ALFA DE CRONBACH) -----------------------------------------
+autoestima_items <- proc_data %>% select(PG_1:PG_10)
+
+autoestima_invertida <- autoestima_items %>%
+  mutate(
+    PG_3 = 6 - PG_3,
+    PG_5 = 6 - PG_5,
+    PG_8 = 6 - PG_8,
+    PG_9 = 6 - PG_9,
+    PG_10 = 6 - PG_10
+  )
+
+# Cálculo de la escala
+autoestima_escala <- autoestima_invertida %>%
+  mutate(PG_autoestima = rowSums(., na.rm = TRUE))
+
+# Añadir al dataset procesado
+proc_data <- proc_data %>%
+  mutate(PG_autoestima = autoestima_escala$PG_autoestima)
+
+# Consistencia interna
+psych::alpha(autoestima_invertida))
+
+## Resultado: Alfa de Cronbach = 0.84 → Muy buena consistencia interna ------------------
 
 
-# Crear escala de Depresión
-	depresion_items <- proc_data %>%
-	  select(PH_1:PH_18)
-	
-	# Suma total (1 = nunca, 2 = a veces, 3 = siempre)
-	depresion_escala <- depresion_items %>%
-	  mutate(PH_depresion = rowSums(., na.rm = TRUE)) %>%
-	  mutate(PH_depresion_dic = ifelse(PH_depresion >= 19, 1, 0))  # 1 = posibles síntomas depresivos
-	
-	# Agregar variables a base principal
-	proc_data <- proc_data %>%
-	  mutate(
-	    PH_depresion = depresion_escala$PH_depresion,
-	    PH_depresion_dic = depresion_escala$PH_depresion_dic
-	  )
+# CONSTRUCCIÓN ESCALA DE DEPRESIÓN (BIRLESON) -------------------------------------
+proc_data <- proc_data %>% mutate(across(PH_1:PH_18, ~as.numeric(.)))
 
+proc_data <- proc_data %>%
+  mutate(
+    PH_2 = 4 - PH_2, PH_3 = 4 - PH_3, PH_4 = 4 - PH_4,
+    PH_10 = 4 - PH_10, PH_14 = 4 - PH_14, PH_15 = 4 - PH_15,
+    PH_17 = 4 - PH_17, PH_18 = 4 - PH_18)
 
+depresion_escala <- proc_data %>%
+  select(PH_1:PH_18) %>%
+  mutate(
+    PH_depresion = rowSums(., na.rm = TRUE),
+    PH_depresion_dic = ifelse(PH_depresion >= 19, 1, 0))
 
+proc_data <- proc_data %>%
+  mutate(
+    PH_depresion = depresion_escala$PH_depresion,
+    PH_depresion_dic = depresion_escala$PH_depresion_dic)
 
+#Alfa de cronbach = Escala depresion ---------------------------------------------
+# Consistencia interna de la escala de Depresión
+depresion_items_corregidos <- proc_data %>% select(PH_1:PH_18)
+psych::alpha(depresion_items_corregidos)
 
+# Evaluación de consistencia interna de la escala de Depresión Infantil de Birleson
+# Ítems invertidos: PH_2, PH_3, PH_4, PH_10, PH_14, PH_15, PH_17, PH_18 (según el manual)
+# Resultado: Alfa de Cronbach = 0.87 → Excelente consistencia interna ----------------------------
 
-
-# Crear un nuevo data frame solo con las escalas (debes asegurarte que tengan el mismo número de casos)
+# TABLA Y MATRIZ DE CORRELACIONES -------------------------------------------------
 escalas <- data.frame(
   PG_autoestima = proc_data$PG_autoestima,
   PH_depresion = proc_data$PH_depresion,
-  victimizaciones = indice_vj$victimizaciones
-)
+  victimizaciones = indice_vj$victimizaciones)
 
-
-# Filtrar filas completas (sin NA)
-escalas_completas <- escalas %>% na.omit()
+escalas_completas <- na.omit(escalas)
 sjPlot::tab_corr(escalas_completas, triangle = "lower")
 
-
-install.packages("ggcorrplot")  # Solo si no lo tienes
-library(ggcorrplot)
-
-# Calcular matriz de correlación
-cor_matrix <- cor(escalas_completas, use = "complete.obs", method = "pearson")
-
-# Gráfico heatmap
-ggcorrplot(cor_matrix, 
-           lab = TRUE, 
-           type = "lower", 
-           method = "circle", 
+cor_matrix <- cor(escalas_completas, use = "complete.obs")
+ggcorrplot(cor_matrix, lab = TRUE, type = "lower", method = "circle",
            colors = c("red", "white", "blue"),
            title = "Correlaciones entre escalas")
 
-
-# Base unificada
+# REGRESIÓN LINEAL SIMPLE Y CONTROLADA -------------------------------------------
 escalas_con_grupo <- data.frame(
   sexo_migrante = proc_data$sexo_migrante,
   PG_autoestima = proc_data$PG_autoestima,
   PH_depresion = proc_data$PH_depresion,
-  victimizaciones = indice_vj$victimizaciones
-) %>% 
-  filter(complete.cases(.))  # solo casos completos
+  victimizaciones = indice_vj$victimizaciones) %>%
+  filter(complete.cases(.))
+
+modelo_vic_simple <- lm(victimizaciones ~ PG_autoestima + PH_depresion, data = escalas_con_grupo)
+summary(modelo_vic_simple)
+
+modelo_vic_control <- lm(victimizaciones ~ PG_autoestima + PH_depresion + sexo_migrante, data = escalas_con_grupo)
+summary(modelo_vic_control)
+
+# DIAGNÓSTICO DE REGRESIÓN --------------------------------------------------------
+par(mfrow = c(2, 2))
+plot(modelo_vic_control)
+par(mfrow = c(1, 1))
+
+# VISUALIZACIÓN GRÁFICA -----------------------------------------------------------
+ggplot(escalas_con_grupo, aes(x = PG_autoestima, y = victimizaciones, color = sexo_migrante)) +
+  geom_point(alpha = 0.4) +
+  geom_smooth(method = "lm", se = FALSE) +
+  labs(title = "Relación entre Autoestima y Victimizaciones según Grupo",
+       x = "Autoestima", y = "Victimizaciones")
 
 
 
 
-library(dplyr)
-
-# Calcular correlaciones entre escalas por grupo---------------------------------
-#   Agrupa los datos por la variable sexo_migrante, lo que indica que se están creando subgrupos según los valores de esa variable.
-#Calcula tres correlaciones dentro de cada grupo:
-#r_auto_dep: Correlación entre la variable de autoestima (PG_autoestima) y depresión (PH_depresion).
-#r_auto_vic: Correlación entre la variable de autoestima y victimizaciones (victimizaciones).
-#r_dep_vic: Correlación entre la variable de depresión y victimizaciones.
-escalas_con_grupo %>%
-  group_by(sexo_migrante) %>%
-  summarise(
-    r_auto_dep = cor(PG_autoestima, PH_depresion),
-    r_auto_vic = cor(PG_autoestima, victimizaciones),
-    r_dep_vic  = cor(PH_depresion, victimizaciones)
-  )
 
 
-#Matrices de correlacion: Grafico de nube -------------------------------------
-
-sjPlot::plot_scatter(proc_data, sexo_migrante, PG_autoestima)
-
-sjPlot::plot_scatter(proc_data, sexo_migrante, PH_depresion)
 
 
-#Estimacion de correlacion -----------------------------------------------------
-cor(proc_data_escalas)
 
-#Alfa de cobranch: analizar solo PG_AUTOESTIMA Y PH_DEPRESION-----------------
-psych::alpha(proc_data_numeric)
+
 
 
 
