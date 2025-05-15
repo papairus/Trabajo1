@@ -28,7 +28,6 @@ pacman::p_load(knitr,
 							 psych, 
 							 survey, 
 							 kableExtra,
-							 GGally,
 							 corrplot,
 							 ggcorrplot,
 							 DescTools,
@@ -367,6 +366,11 @@ diseño_complejo <- svydesign(
 tabla_cor <- proc_completo %>%
   select(PG_autoestima, PH_depresion, victimizaciones)
 
+# Gráfico de dispersión entre PG_autoestima, PH_depresion y victimizaciones
+ggplot(tabla_cor, aes(x = PG_autoestima, y = PH_depresion, color = victimizaciones)) +
+  geom_point() +
+  labs(title = "Relación entre Autoestima, Depresión y Victimizaciones", x = "Autoestima", y = "Depresión", color = "Victimizaciones") +
+  theme_minimal()
 
 # graficar la matriz es con la función ggpairs del paquete GGally ---------------------
 # que nos entrega no solo el valor del coeficiente y su significancia (***), 
@@ -408,7 +412,9 @@ ggplot(proc_completo, aes(x = PG_autoestima, y = victimizaciones, color = sexo_m
 
 
 
-
+getwd()
+	datos <- read.csv("datos_brutos.csv")  # Carga de datos desde un CSV
+save(datos, file = "procesamiento/Trabajo2.RData")  # Guardar los datos en el archivo .RData
 
 
 

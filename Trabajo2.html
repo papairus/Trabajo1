@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.42">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Baeza, Muñoz, Pérez">
+
+<title>Cuando el género y la migración se cruzan: una mirada a la victimización en NNA´s</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="Trabajo2_files/libs/clipboard/clipboard.min.js"></script>
+<script src="Trabajo2_files/libs/quarto-html/quarto.js"></script>
+<script src="Trabajo2_files/libs/quarto-html/popper.min.js"></script>
+<script src="Trabajo2_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="Trabajo2_files/libs/quarto-html/anchor.min.js"></script>
+<link href="Trabajo2_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="Trabajo2_files/libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="Trabajo2_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="Trabajo2_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="Trabajo2_files/libs/bootstrap/bootstrap-1bc8a17f135ab3d594c857e9f48e611b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Cuando el género y la migración se cruzan: una mirada a la victimización en NNA´s</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Baeza, Muñoz, Pérez </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Cargar datos procesados</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">getwd</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "C:/Users/alemu/OneDrive/Escritorio/R/Trabajo1"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="st">"procesamiento/Trabajo2.RData"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><img src="images/Escudo_UAH.png" class="img-fluid" width="106"></p>
+<section id="introducción-al-trabajo-2-contextualización-desde-el-trabajo-1" class="level2">
+<h2 class="anchored" data-anchor-id="introducción-al-trabajo-2-contextualización-desde-el-trabajo-1">Introducción al Trabajo 2: Contextualización desde el Trabajo 1</h2>
+<p>El presente trabajo se enmarca como una continuidad del análisis iniciado en el Trabajo 1, donde se exploraron las experiencias de victimización percibida en niños, niñas y adolescentes (NNA´s) residentes en Chile, considerando como eje de comparación su origen migratorio y género.</p>
+<p>En ese primer análisis, se contó con el indice de victimizaciones, con el objetivo de describir las diferencias en la exposición a situaciones de violencia y vulnerabilidad. Se consideró la unificacion de la variable “sexo_migrante”, la cual distribuye sexo y origen (chileno/a o migrante), incluyendo una categoría adicional para quienes no se identifican con el binomio hombre/mujer, en atención a las posibilidades que ofrece la base de datos.</p>
+<p>Los resultados indicaron que los NNA migrantes presentaban, en promedio, niveles más altos de victimización que sus pares chilenos. Particularmente, se observaron mayores niveles en niñas migrantes y en quienes se identificaron fuera del binario de género, aunque se advierte que los tamaños muestrales de algunos subgrupos son reducidos, lo que limita la generalización de los hallazgos. En este sentido, se utilizó ponderación muestral conforme a las recomendaciones del manual metodológico provisto por DESUC.</p>
+<p>Si bien el análisis no permite establecer causalidad, los resultados sugieren la necesidad de seguir indagando en los factores asociados a estas diferencias, considerando tanto variables estructurales como institucionales. El Trabajo 2 busca avanzar en esta línea, examinando la relación entre las experiencias de victimización y el bienestar subjetivo, operacionalizado mediante escalas de autoestima (Rosenberg) y depresión (Birleson), controlando por sexo y origen migratorio.</p>
+<p>Este enfoque permitirá aportar evidencia empírica sobre posibles vínculos entre violencia percibida y salud mental en infancias y adolescencias diversas, en un contexto donde los fenómenos migratorios presentan desafíos importantes para la garantía de derechos.</p>
+</section>
+<section id="relevancia-del-trabajo-2" class="level2">
+<h2 class="anchored" data-anchor-id="relevancia-del-trabajo-2">Relevancia del Trabajo 2</h2>
+<p>Este segundo trabajo busca profundizar en la comprensión de los efectos que pueden tener las experiencias de victimización en la salud mental de niños, niñas y adolescentes en Chile, considerando diferencias por sexo y origen migratorio. A través del análisis de dos escalas psicológicas estandarizadas —una de autoestima y otra de síntomas depresivos— se pretende examinar en qué medida la exposición acumulada a situaciones de violencia (victimización) se relaciona con el bienestar subjetivo de las infancias.</p>
+<p>Este enfoque permite vincular dimensiones estructurales y subjetivas, ofreciendo una perspectiva empírica que contribuya al diseño de intervenciones sensibles a las condiciones particulares que enfrentan NNA migrantes y no migrantes en contextos de desigualdad.</p>
+</section>
+<section id="variable-dependiente-sobre-el-indice-de-victimizaciones-y-su-construcción" class="level2">
+<h2 class="anchored" data-anchor-id="variable-dependiente-sobre-el-indice-de-victimizaciones-y-su-construcción">Variable dependiente: sobre el Indice de Victimizaciones y su construcción</h2>
+<p>La variable dependiente principal en este análisis es un índice que resume la cantidad total de situaciones de victimización que cada NNA declara haber experimentado a lo largo de su vida. Este índice fue construido a partir de la suma de respuestas afirmativas a una serie de ítems incluidos en el módulo de victimización de la base de datos, los cuales representan distintos tipos de violencia (física, verbal, psicológica, entre otras).</p>
+<p>Se aplicó un criterio de eliminación por pares (pairwise deletion), considerando únicamente aquellos casos con al menos una respuesta válida en las variables constitutivas del índice. El total de experiencias de victimización fue tratado como una variable continua, reflejando el nivel acumulado de exposición a violencia en la vida de cada individuo.</p>
+<p>El índice muestra una distribución que va de 0 a 31 eventos de victimización, con una mediana de 6 y una media de 7.28. Los valores cuartílicos son los siguientes:</p>
+<ul>
+<li><p>1er cuartil (Q1): 3 victimizaciones</p></li>
+<li><p>Mediana (Q2): 6 victimizaciones</p></li>
+<li><p>3er cuartil (Q3): 11 victimizaciones</p></li>
+</ul>
+<p>Estos resultados son consistentes con lo observado en el Trabajo 1 y confirman la presencia de una proporción significativa de NNA con múltiples experiencias de victimización</p>
+<section id="cuál-es-el-porcentaje-para-que-las-victimizaciones-cobren-el-sentido-de-polivictimizacion" class="level4">
+<h4 class="anchored" data-anchor-id="cuál-es-el-porcentaje-para-que-las-victimizaciones-cobren-el-sentido-de-polivictimizacion">¿Cuál es el porcentaje para que las victimizaciones cobren el sentido de polivictimizacion?</h4>
+<p>Para operacionalizar el concepto de <em>polivictimización</em>, se siguieron las orientaciones teóricas (DESUC) que definen como polivictimizados a aquellos casos que se encuentran en el 10% (percentil 90) superior de la muestra en términos de la cantidad total de victimizaciones reportadas, tanto en la vida como en el último año (aunque este análisis se centrará en las victimizaciones de vida).</p>
+<p>De acuerdo con este criterio, el 10.93% de la muestra presenta niveles de victimización suficientemente altos como para ser clasificados como polivictimizados, mientras que el 89.07% restante no alcanza ese umbral.</p>
+<p>Este indicador permite identificar a un subgrupo de NNA que ha estado expuesto a múltiples formas de violencia de manera reiterada o acumulada, lo que puede tener consecuencias más severas sobre su bienestar emocional y desarrollo psicosocial.</p>
+</section>
+</section>
+<section id="construcción-escala-de-autoestima" class="level2">
+<h2 class="anchored" data-anchor-id="construcción-escala-de-autoestima">Construcción Escala de Autoestima</h2>
+<p>La escala de autoestima se construyó utilizando el conjunto de ítems correspondientes a la escala de Rosenberg, presente en la base de datos. Esta escala está compuesta por afirmaciones que evalúan la percepción general de autovaloración de los NNA, con opciones de respuesta tipo Likert.</p>
+<p>Se recodificaron los ítems negativos para asegurar que una mayor puntuación reflejara consistentemente un menor nivel de autoestima. En otras palabras, mientras mas puntaje relacionado a una baja autoestima, mayor serán los niveles de la escala. Luego, se sumaron las puntuaciones individuales de los ítems válidos para cada caso, generando así una puntuación total de baja autoestima, tratada como una variable continua.</p>
+<p>Esto se ejemplifica como en el siguiente caso:</p>
+<ul>
+<li><strong>PG_2</strong> = “Siento que tengo cualidades positivas” 1 Muy en desacuerdo</li>
+</ul>
+<p>2 En desacuerdo</p>
+<p>3 Ni en acuerdo ni en desacuerdo</p>
+<p>4 De acuerdo</p>
+<p>5 Muy de acuerdo</p>
+<p>Donde la categoria de respuesta “muy de acuerdo” alude a mas autoestima</p>
+<ul>
+<li><strong>PG_3</strong>= “En general, tiendo a sentir que soy un fracaso” 1: Muy en desacuerdo</li>
+</ul>
+<p>2: En desacuerdo</p>
+<p>3: Ni en acuerdo ni en desacuerdo 4: De acuerdo</p>
+<p>5: Muy de acuerdo</p>
+<p>Mientras en PG_3, la respuesta “muy de acuerdo” alude a menos autoestima.</p>
+<section id="figura-1-histograma-pg_autoestima-elaboración-propia-a-partir-de-r" class="level4">
+<h4 class="anchored" data-anchor-id="figura-1-histograma-pg_autoestima-elaboración-propia-a-partir-de-r">Figura 1: Histograma PG_autoestima (elaboración propia a partir de R)</h4>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="output/histograma_autoestima.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="498"></p>
+</figure>
+</div>
+</section>
+<section id="consistencia-interna-alfa-de-cronbach-para-pg_autoestima" class="level4">
+<h4 class="anchored" data-anchor-id="consistencia-interna-alfa-de-cronbach-para-pg_autoestima">Consistencia interna: Alfa de Cronbach para PG_autoestima</h4>
+<p>La escala de autoestima utilizada en este estudio presentó un <strong>índice de confiabilidad alfa de Cronbach de 0.84</strong>, lo que indica una <strong>alta consistencia interna</strong> entre los ítems. Este resultado sugiere que la escala mide de manera coherente el constructo de autoestima en la muestra de niños, niñas y adolescentes (NNA) considerados.</p>
+<p>En general, todos los ítems mostraron una contribución adecuada a la confiabilidad total. No obstante, se identificó que el ítem <strong>PG_8 (“Me gustaría tener más respeto conmigo mismo”)</strong> presentó un rendimiento relativamente más bajo, con una correlación corregida con el total (r.drop) de 0.054. Esto indica que su relación con la puntuación total es más débil que la del resto de los ítems.</p>
+<p>Si bien el impacto de este ítem no compromete la solidez general de la escala, su comportamiento estadístico sugiere que podría estar siendo interpretado de forma distinta por parte de los participantes. Esto podría deberse a su formulación en términos de un deseo o carencia, lo cual puede generar ambigüedad en la interpretación, especialmente en población infantojuvenil.</p>
+<p>En conclusión, la escala muestra <strong>buena fiabilidad</strong> para evaluar autoestima en esta muestra, aunque sería recomendable revisar la redacción del ítem PG_8 en futuras aplicaciones para asegurar una alineación más clara con el resto de los enunciados.</p>
+</section>
+</section>
+<section id="construcción-escala-de-depresión" class="level2">
+<h2 class="anchored" data-anchor-id="construcción-escala-de-depresión">Construcción Escala de Depresión</h2>
+<p>La escala de depresión fue elaborada a partir de los ítems correspondientes a la escala de Birleson, diseñada para detectar síntomas depresivos en infancias y adolescencias. Esta escala incluye afirmaciones relacionadas con el estado de ánimo, la motivación y las relaciones sociales.</p>
+<p>Se revisaron los valores y sentidos de cada ítem para asegurar la correcta orientación de las respuestas. Posteriormente, se sumaron las puntuaciones individuales para obtener un puntaje total de síntomas depresivos. Esta puntuación también fue tratada como una variable continua para efectos del análisis.</p>
+<ul>
+<li><strong>PH_2</strong> = “Siento ganas de llorar” 1: Nunca</li>
+</ul>
+<p>2: A veces</p>
+<p>3: Siempre</p>
+<p>Donde “Siempre”, se entiende como sintomatología depresiva.</p>
+<ul>
+<li><strong>PH_16</strong> = “Me animo fácilmente, me entusiasmo con mucha facilidad” 1: Nunca</li>
+</ul>
+<p>2: A veces</p>
+<p>3: Siempre</p>
+<p>Mientras que PH_16, “Siempre” hace alución a menor depresión.</p>
+<section id="figura-2-histograma-pg_depresion-elaboración-propia-a-partir-de-r" class="level4">
+<h4 class="anchored" data-anchor-id="figura-2-histograma-pg_depresion-elaboración-propia-a-partir-de-r">Figura 2: Histograma PG_depresion (elaboración propia a partir de R)</h4>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="output/histograma%20distribucion%20depresion.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="498"></p>
+</figure>
+</div>
+</section>
+<section id="consistencia-interna-alfa-de-cronbach-para-ph_depresión" class="level4">
+<h4 class="anchored" data-anchor-id="consistencia-interna-alfa-de-cronbach-para-ph_depresión">Consistencia interna: Alfa de Cronbach para PH_depresión</h4>
+<p>La escala de depresión construida a partir de los ítems de la Escala de Birleson mostró una <strong>alta confiabilidad</strong>, con un <strong>alfa de Cronbach de 0.87</strong>, lo que indica que los ítems presentan una <strong>fuerte consistencia interna</strong>. Este nivel de fiabilidad es adecuado para su uso en investigaciones que buscan evaluar síntomas depresivos en infancias y adolescencias.</p>
+<p>El análisis sugiere que la mayoría de los ítems están bien alineados con el constructo teórico de la escala, aportando coherencia al conjunto. No obstante, se identificó que el ítem <strong>PH_5 (“No me divierto cuando juego”)</strong> presenta una <strong>correlación corregida con el total baja (r.drop = 0.098)</strong>, lo que indica una débil asociación con la puntuación global de síntomas depresivos. Además, si se eliminara este ítem, el alfa aumentaría ligeramente, lo que refuerza la idea de que su aporte a la escala es limitado.</p>
+<p>Aunque su impacto sobre la confiabilidad total no es suficiente para desestimar el instrumento, su desempeño relativamente bajo sugiere que podría no estar siendo interpretado de forma consistente por los/as estudiantes, o bien que su relación con el estado emocional puede estar mediada por factores contextuales (por ejemplo, el tipo de juegos o el entorno social).</p>
+<p>En resumen, la escala evidencia <strong>una estructura confiable y sólida</strong>, con la mayoría de los ítems funcionando adecuadamente. La revisión futura del ítem PH_5 podría contribuir a afinar aún más la precisión del instrumento.</p>
+</section>
+</section>
+<section id="sobre-la-asociación-de-las-variables" class="level2">
+<h2 class="anchored" data-anchor-id="sobre-la-asociación-de-las-variables">Sobre la Asociación de las variables</h2>
+<section id="figura-3-grafico-de-correlación-autoestima-y-depresion-segun-victimizaciones-elaboración-propia-a-partir-de-r" class="level4">
+<h4 class="anchored" data-anchor-id="figura-3-grafico-de-correlación-autoestima-y-depresion-segun-victimizaciones-elaboración-propia-a-partir-de-r">Figura 3: Grafico de correlación Autoestima y depresion, segun victimizaciones (elaboración propia a partir de R)</h4>
+<p><img src="images/clipboard-930739146.png" class="img-fluid"></p>
+<p>El diagrama de dispersión muestra una <strong>relación positiva clara entre depresión y baja autoestima</strong>, con una tendencia lineal ascendente: a mayor puntuación en la escala de depresión, también se observa una mayor puntuación en la escala de autoestima invertida, lo que en este caso indica <strong>menor autoestima</strong>. Esta relación es coherente con la literatura psicológica, donde se ha documentado ampliamente que la baja autoestima es un factor asociado al desarrollo de sintomatología depresiva. La nube de puntos está bastante concentrada, lo cual sugiere una <strong>relación fuerte y consistente</strong> entre ambas variables.</p>
+</section>
+<section id="figura-4-matriz-de-correlación-elaboración-propia-a-partir-de-r" class="level4">
+<h4 class="anchored" data-anchor-id="figura-4-matriz-de-correlación-elaboración-propia-a-partir-de-r">Figura 4: Matriz de correlación (elaboración propia a partir de R)</h4>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="output/ggpairs.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<p>La matriz de correlaciones, acompañada de histogramas, permite observar tanto la distribución individual de las variables como la fuerza y dirección de sus asociaciones. Se destaca una <strong>correlación positiva alta entre depresión y baja autoestima (r = 0.734)</strong>, consistente con estudios previos que muestran que personas con baja autoestima son más propensas a experimentar síntomas depresivos. En contraste, se observa una <strong>correlación negativa débil entre victimizaciones y baja autoestima (r = -0.266)</strong>, y una también negativa con depresión (r = -0.303). Esto indica que, a mayor número de victimizaciones reportadas, las personas tienden a tener <strong>niveles más altos de autoestima</strong> y <strong>menores síntomas depresivos</strong>, lo que <strong>contradice expectativas teóricas</strong>. Esta discrepancia podría reflejar una <strong>posible subdeclaración de síntomas</strong>, mecanismos de afrontamiento resilientes, o limitaciones en la sensibilidad de las escalas. Los histogramas, por su parte, muestran distribuciones sesgadas hacia valores bajos, especialmente en depresión, lo cual sugiere que la mayoría de las personas presentan niveles reducidos de sintomatología depresiva.</p>
+</section>
+<section id="figura-5-matriz-de-correlación-mixta-elaboración-propia-a-partir-de-r" class="level4">
+<h4 class="anchored" data-anchor-id="figura-5-matriz-de-correlación-mixta-elaboración-propia-a-partir-de-r">Figura 5: Matriz de correlación mixta (elaboración propia a partir de R)</h4>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="output/corrplotmixed.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="498"></p>
+</figure>
+</div>
+<p>El gráfico muestra una <strong>relación negativa débil entre victimizaciones y baja autoestima</strong>, lo que indica que, en esta muestra, quienes reportan más experiencias de victimización tienden a presentar <strong>niveles más altos de autoestima</strong>. Esta relación resulta <strong>contraintuitiva</strong>, ya que desde una perspectiva teórica se esperaría que mayores experiencias de victimización se asociaran a menor autoestima. Este resultado puede estar influido por factores contextuales como apoyo social, características del entorno escolar, o puede reflejar un fenómeno de adaptación psicológica en la muestra. No obstante, dada la debilidad de la correlación, es importante interpretar estos hallazgos con cautela y considerar posibles errores de medición o sesgos de autoinforme.</p>
+</section>
+<section id="figura-6-grafico-de-dispersion-controlado-según-sexo_migrante-elaboración-propia-a-partir-de-r" class="level4">
+<h4 class="anchored" data-anchor-id="figura-6-grafico-de-dispersion-controlado-según-sexo_migrante-elaboración-propia-a-partir-de-r">Figura 6: Grafico de dispersion controlado según sexo_migrante (elaboración propia a partir de R)</h4>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="output/victimizaciones%20segun%20autoestima%20controlado%20con%20sexo_migrante.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<p>El gráfico presentado ilustra la relación entre los niveles de autoestima (eje x) y el número de victimizaciones experimentadas (eje y) en diferentes grupos demográficos, categorizados por sexo y condición migratoria. Es importante recordar que, según lo explicado, mayores puntuaciones en la escala de autoestima corresponden a una menor autoestima.</p>
+<p>El gráfico muestra una clara tendencia negativa para todos los grupos analizados, lo que indica una relación inversa entre autoestima y victimizaciones: a medida que disminuye la autoestima (valores más altos en el eje x), se incrementa el número de victimizaciones reportadas. Esta relación es consistente en todos los grupos demográficos, aunque con variaciones significativas en la intensidad y punto de partida.</p>
+<p><strong>Diferencias por grupo demográfico:</strong></p>
+<ul>
+<li><p>La categoría “Otro chilenx” (línea azul): presenta la pendiente más pronunciada, comenzando con los niveles más altos de victimización cuando la autoestima es más alta (valores bajos en el eje x), y descendiendo notablemente conforme disminuye la autoestima.</p></li>
+<li><p>Las mujeres, tanto chilenas como migrantes (líneas rosa y dorada respectivamente): muestran patrones similares con pendientes negativas moderadas, sugiriendo que ambos grupos experimentan un incremento comparable en victimizaciones a medida que su autoestima disminuye.</p></li>
+<li><p>Los hombres, tanto chilenos como migrantes (líneas verde y turquesa): presentan niveles iniciales de victimización más bajos que las mujeres y la categoría “otro”, aunque mantienen la misma tendencia negativa.</p></li>
+<li><p>La categoría “Otro migrante” (línea violeta) muestra una pendiente menos pronunciada, lo que podría indicar que la relación entre autoestima y victimización es menos intensa para este grupo específico.</p></li>
+</ul>
+</section>
+<section id="sobre-la-dispersión" class="level4">
+<h4 class="anchored" data-anchor-id="sobre-la-dispersión">Sobre la dispersión</h4>
+<p>La nube de puntos muestra una considerable dispersión en todos los grupos, evidenciando importantes diferencias individuales dentro de cada categoría demográfica. Esta variabilidad sugiere que, aunque existe una tendencia general, otros factores no contemplados en el gráfico podrían estar influyendo en la relación autoestima-victimización.</p>
+</section>
+<section id="relación" class="level4">
+<h4 class="anchored" data-anchor-id="relación">Relación</h4>
+<p>Los resultados visualizados en el gráfico son coherentes con los constructos teóricos presentados en la investigación. La relación negativa entre autoestima y victimizaciones sugiere que las experiencias de violencia tienen un impacto acumulativo en el bienestar subjetivo de niños, niñas y adolescentes, manifestándose en menores niveles de autoestima cuando aumenta la exposición a situaciones victimizantes.</p>
+</section>
+</section>
+<section id="conclusión" class="level2">
+<h2 class="anchored" data-anchor-id="conclusión">Conclusión</h2>
+<p>El análisis de las experiencias de victimización en niños, niñas y adolescentes (NNA) en Chile, en relación con autoestima, depresión y variables sociodemográficas, revela una situación compleja que requiere atención diferenciada.</p>
+<p>Los resultados muestran que, en general, mayores niveles de victimización se asocian con menores niveles de autoestima en todos los grupos sexo/migrante, siendo esta relación más marcada en la categoría “Otro chilenx” y más moderada en mujeres migrantes y chilenas.</p>
+<p>Sin embargo, la matriz de correlaciones muestra asociaciones negativas débiles entre victimizaciones y autoestima (r = -0.266) y entre victimizaciones y depresión (r = -0.303), lo que sugiere que, contra lo esperado, quienes reportan más victimizaciones tienden a presentar mayores niveles de autoestima y menos síntomas depresivos. Este hallazgo podría deberse a factores como mecanismos de resiliencia, subdeclaración de síntomas o limitaciones en las escalas utilizadas.</p>
+<p>En contraste, la correlación entre baja autoestima y depresión es alta (r = 0.734), lo que valida el uso combinado de las escalas de Rosenberg y Birleson para evaluar el bienestar subjetivo en esta población.</p>
+<p>Desde una perspectiva de vulnerabilidad, se identifican riesgos diferenciados según sexo y origen migrante. El grupo “Otro chilenx” presenta la relación más pronunciada entre victimización y baja autoestima, mientras que mujeres migrantes y chilenas muestran patrones similares con menor intensidad. Estos hallazgos coinciden con investigaciones previas que documentan mayor victimización en niñas migrantes y personas no binarias.</p>
+<p>En cuanto a la polivictimización, definida como pertenecer al 10.93% superior en la suma de victimizaciones, se observa que ciertos grupos enfrentan mayor exposición a múltiples formas de violencia, con posibles impactos acumulativos en su bienestar psicosocial.</p>
+<p>Los resultados subrayan la necesidad de intervenciones focalizadas que prevengan la victimización y refuercen factores protectores como la autoestima, especialmente en grupos vulnerables. Además, los hallazgos inesperados invitan a investigar más a fondo los mecanismos de afrontamiento y a revisar las herramientas de medición empleadas.</p>
+<p>En suma, este estudio aporta evidencia relevante sobre cómo la victimización se vincula de forma diferenciada con el bienestar psicológico según identidad de género y condición migratoria, lo que refuerza la urgencia de políticas públicas interseccionales e inclusivas.</p>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
