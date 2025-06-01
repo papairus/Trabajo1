@@ -39,15 +39,15 @@ Se aplicó un criterio de eliminación por pares (pairwise deletion), consideran
 
 El índice muestra una distribución que va de 0 a 31 eventos de victimización, con una mediana de 6 y una media de 7.28. Los valores cuartílicos son los siguientes:
 
--    1er cuartil (Q1): 3 victimizaciones
+-   1er cuartil (Q1): 3 victimizaciones
 
--    Mediana (Q2): 6 victimizaciones
+-   Mediana (Q2): 6 victimizaciones
 
--    3er cuartil (Q3): 11 victimizaciones
+-   3er cuartil (Q3): 11 victimizaciones
 
 Estos resultados son consistentes con lo observado en el Trabajo 1 y confirman la presencia de una proporción significativa de NNA con múltiples experiencias de victimización
 
-####  ¿Cuál es el porcentaje para que las victimizaciones cobren el sentido de polivictimizacion?
+#### ¿Cuál es el porcentaje para que las victimizaciones cobren el sentido de polivictimizacion?
 
 Para operacionalizar el concepto de *polivictimización*, se siguieron las orientaciones teóricas (DESUC) que definen como polivictimizados a aquellos casos que se encuentran en el 10% (percentil 90) superior de la muestra en términos de la cantidad total de victimizaciones reportadas, tanto en la vida como en el último año (aunque este análisis se centrará en las victimizaciones de vida).
 
@@ -55,13 +55,17 @@ De acuerdo con este criterio, el 10.93% de la muestra presenta niveles de victim
 
 Este indicador permite identificar a un subgrupo de NNA que ha estado expuesto a múltiples formas de violencia de manera reiterada o acumulada, lo que puede tener consecuencias más severas sobre su bienestar emocional y desarrollo psicosocial.
 
+```{r}
+round(prop.table(table(indice_vj$polivict_vida)) * 100, 2) 
+```
+
 ## Construcción Escala de Autoestima
 
 La escala de autoestima se construyó utilizando el conjunto de ítems correspondientes a la escala de Rosenberg, presente en la base de datos. Esta escala está compuesta por afirmaciones que evalúan la percepción general de autovaloración de los NNA, con opciones de respuesta tipo Likert.
 
 Se recodificaron los ítems negativos para asegurar que una mayor puntuación reflejara consistentemente un menor nivel de autoestima. En otras palabras, mientras mas puntaje relacionado a una baja autoestima, mayor serán los niveles de la escala. Luego, se sumaron las puntuaciones individuales de los ítems válidos para cada caso, generando así una puntuación total de baja autoestima, tratada como una variable continua.
 
-Esto se ejemplifica como en el siguiente caso:
+Los cambios indicados anteriormente se comprenden y justifican en el siguiente caso:
 
 -   **PG_2** = "Siento que tengo cualidades positivas" 1 Muy en desacuerdo
 
@@ -79,11 +83,15 @@ Donde la categoria de respuesta "muy de acuerdo" alude a mas autoestima
 
 2: En desacuerdo
 
-3: Ni en acuerdo ni en desacuerdo 4: De acuerdo
+3: Ni en acuerdo ni en desacuerdo
+
+4: De acuerdo
 
 5: Muy de acuerdo
 
 Mientras en PG_3, la respuesta "muy de acuerdo" alude a menos autoestima.
+
+Como es el caso de PG_3, las variables PG_5, 8, 9 y 10 presentaron el mismo problema de calculo, por lo tanto, por medio de R, invertimos estas respuestas concretando asi una congruencia entre las respuestas.
 
 #### Figura 1: Histograma PG_autoestima (elaboración propia a partir de R)
 
@@ -105,6 +113,8 @@ La escala de depresión fue elaborada a partir de los ítems correspondientes a 
 
 Se revisaron los valores y sentidos de cada ítem para asegurar la correcta orientación de las respuestas. Posteriormente, se sumaron las puntuaciones individuales para obtener un puntaje total de síntomas depresivos. Esta puntuación también fue tratada como una variable continua para efectos del análisis.
 
+Los cambios indicados anteriormente se comprenden y justifican en el siguiente caso:
+
 -   **PH_2** = "Siento ganas de llorar" 1: Nunca
 
 2: A veces
@@ -119,11 +129,15 @@ Donde "Siempre", se entiende como sintomatología depresiva.
 
 3: Siempre
 
-Mientras que PH_16, "Siempre" hace alución a menor depresión.
+Mientras que PH_16, "Siempre" alude a un mejor estado anímico.
+
+Como es el caso de PH_2, las variables PH_3 ,4, 10, 14, 15, 17 y 18 presentaron el mismo problema de interpretación, en tanto sus formulaciones positivas podrían conducir a que una respuesta de mayor frecuencia (por ejemplo, “Siempre”) indicara un mejor estado de ánimo, lo que va en sentido opuesto al objetivo de la escala.
+
+Por lo tanto, siguiendo la misma lógica aplicada a la escala de autoestima, se invirtieron estos ítems en R, de forma que mayores puntajes reflejaran consistentemente mayores niveles de sintomatología depresiva. Así, se garantizó que la dirección de todos los ítems estuviera alineada, permitiendo sumar sus valores para construir la escala continua PH_depresion.
 
 #### Figura 2: Histograma PG_depresion (elaboración propia a partir de R)
 
-![](output/histograma distribucion depresion.png){fig-align="center" width="498"}
+![](output/histograma%20distribucion%20depresion.png){fig-align="center" width="498"}
 
 #### Consistencia interna: Alfa de Cronbach para PH_depresión
 
@@ -143,21 +157,29 @@ En resumen, la escala evidencia **una estructura confiable y sólida**, con la m
 
 El diagrama de dispersión muestra una **relación positiva clara entre depresión y baja autoestima**, con una tendencia lineal ascendente: a mayor puntuación en la escala de depresión, también se observa una mayor puntuación en la escala de autoestima invertida, lo que en este caso indica **menor autoestima**. Esta relación es coherente con la literatura psicológica, donde se ha documentado ampliamente que la baja autoestima es un factor asociado al desarrollo de sintomatología depresiva. La nube de puntos está bastante concentrada, lo cual sugiere una **relación fuerte y consistente** entre ambas variables.
 
-#### Figura 4:  Matriz de correlación (elaboración propia a partir de R)
+#### Figura 4: Matriz de correlación (elaboración propia a partir de R)
 
 ![](output/ggpairs.png){fig-align="center"}
 
-La matriz de correlaciones, acompañada de histogramas, permite observar tanto la distribución individual de las variables como la fuerza y dirección de sus asociaciones. Se destaca una **correlación positiva alta entre depresión y baja autoestima (r = 0.734)**, consistente con estudios previos que muestran que personas con baja autoestima son más propensas a experimentar síntomas depresivos. En contraste, se observa una **correlación negativa débil entre victimizaciones y baja autoestima (r = -0.266)**, y una también negativa con depresión (r = -0.303). Esto indica que, a mayor número de victimizaciones reportadas, las personas tienden a tener **niveles más altos de autoestima** y **menores síntomas depresivos**, lo que **contradice expectativas teóricas**. Esta discrepancia podría reflejar una **posible subdeclaración de síntomas**, mecanismos de afrontamiento resilientes, o limitaciones en la sensibilidad de las escalas. Los histogramas, por su parte, muestran distribuciones sesgadas hacia valores bajos, especialmente en depresión, lo cual sugiere que la mayoría de las personas presentan niveles reducidos de sintomatología depresiva.
+La matriz de correlaciones, acompañada de histogramas, permite observar tanto la distribución individual de las variables como la fuerza y dirección de sus asociaciones. Se destaca una correlación **positiva alta entre depresión y baja autoestima** (r = 0.734), consistente con estudios previos que muestran que personas con baja autoestima son más propensas a experimentar síntomas depresivos. En cuanto a la relación con el índice de victimizaciones, se observa una correlación negativa débil tanto con baja autoestima (r = -0.266) como con depresión (r = -0.303).
+
+**Dado que puntuaciones altas en ambas escalas reflejan menor autoestima y mayor sintomatología depresiva**, estos resultados indican que, a mayor número de victimizaciones reportadas, los y las NNA tienden a presentar **mayores síntomas depresivos y menor autoestima**, lo cual **es coherente con lo esperado teóricamente**.
+
+Los histogramas, por su parte, muestran distribuciones sesgadas hacia valores bajos, especialmente en la escala de depresión, lo que sugiere que la mayoría de los casos presentan niveles reducidos de sintomatología depresiva.
 
 #### Figura 5: Matriz de correlación mixta (elaboración propia a partir de R)
 
 ![](output/corrplotmixed.png){fig-align="center" width="498"}
 
-El gráfico muestra una **relación negativa débil entre victimizaciones y baja autoestima**, lo que indica que, en esta muestra, quienes reportan más experiencias de victimización tienden a presentar **niveles más altos de autoestima**. Esta relación resulta **contraintuitiva**, ya que desde una perspectiva teórica se esperaría que mayores experiencias de victimización se asociaran a menor autoestima. Este resultado puede estar influido por factores contextuales como apoyo social, características del entorno escolar, o puede reflejar un fenómeno de adaptación psicológica en la muestra. No obstante, dada la debilidad de la correlación, es importante interpretar estos hallazgos con cautela y considerar posibles errores de medición o sesgos de autoinforme.
+La matriz de correlación mixta permite explorar las asociaciones entre las variables de interés, combinando coeficientes de correlación para variables continuas, asociaciones para variables categóricas y gráficas de dispersión con tendencias.
+
+Se observa nuevamente una **correlación positiva entre las escalas de baja autoestima (`PG_autoestima`) y depresión (`PH_depresion`)**, lo que refuerza la evidencia de que, a medida que aumentan los niveles de sintomatología depresiva, también lo hace la baja autoestima.
+
+En relación con el índice de victimizaciones, se evidencia una **asociación negativa con ambas escalas**: a mayor cantidad de victimizaciones reportadas, **más síntomas depresivos** y **menor autoestima** (recordando que ambas escalas están codificadas de forma que puntajes altos indican menor bienestar).
 
 #### Figura 6: Grafico de dispersion controlado según sexo_migrante (elaboración propia a partir de R)
 
-![](output/victimizaciones segun autoestima controlado con sexo_migrante.png){fig-align="center"}
+![](output/victimizaciones%20segun%20autoestima%20controlado%20con%20sexo_migrante.png){fig-align="center"}
 
 El gráfico presentado ilustra la relación entre los niveles de autoestima (eje x) y el número de victimizaciones experimentadas (eje y) en diferentes grupos demográficos, categorizados por sexo y condición migratoria. Es importante recordar que, según lo explicado, mayores puntuaciones en la escala de autoestima corresponden a una menor autoestima.
 
@@ -181,7 +203,7 @@ La nube de puntos muestra una considerable dispersión en todos los grupos, evid
 
 Los resultados visualizados en el gráfico son coherentes con los constructos teóricos presentados en la investigación. La relación negativa entre autoestima y victimizaciones sugiere que las experiencias de violencia tienen un impacto acumulativo en el bienestar subjetivo de niños, niñas y adolescentes, manifestándose en menores niveles de autoestima cuando aumenta la exposición a situaciones victimizantes.
 
-## Conclusión 
+## Conclusión
 
 El análisis de las experiencias de victimización en niños, niñas y adolescentes (NNA) en Chile, en relación con autoestima, depresión y variables sociodemográficas, revela una situación compleja que requiere atención diferenciada.
 
