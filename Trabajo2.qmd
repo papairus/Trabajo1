@@ -131,9 +131,9 @@ Donde "Siempre", se entiende como sintomatología depresiva.
 
 Mientras que PH_16, "Siempre" alude a un mejor estado anímico.
 
-Como es el caso de PH_2, las variables PH_3 ,4, 10, 14, 15, 17 y 18 presentaron el mismo problema de interpretación, en tanto sus formulaciones positivas podrían conducir a que una respuesta de mayor frecuencia (por ejemplo, “Siempre”) indicara un mejor estado de ánimo, lo que va en sentido opuesto al objetivo de la escala.
+Tal como ocurrió con el ítem PH_2, las variables PH_3, PH_4, PH_10, PH_14, PH_15, PH_17 y PH_18 presentaron un problema similar de interpretación. Estas preguntas estaban formuladas en sentido positivo, lo que implicaba que respuestas con mayor frecuencia (por ejemplo, "Siempre") podían interpretarse como indicadores de un mejor estado de ánimo. Esta codificación iba en contra del objetivo de la escala, que busca medir sintomatología depresiva, donde mayores puntajes deberían reflejar un mayor malestar.
 
-Por lo tanto, siguiendo la misma lógica aplicada a la escala de autoestima, se invirtieron estos ítems en R, de forma que mayores puntajes reflejaran consistentemente mayores niveles de sintomatología depresiva. Así, se garantizó que la dirección de todos los ítems estuviera alineada, permitiendo sumar sus valores para construir la escala continua PH_depresion.
+Para resolver esta inconsistencia, se invirtieron estos ítems en R, siguiendo la misma lógica aplicada previamente a la escala de autoestima. De esta manera, se aseguró que en todos los ítems un puntaje más alto representara mayores niveles de síntomas depresivos. Esta recodificación permitió sumar los valores de cada ítem de forma coherente y construir así una escala continua unidireccional denominada **PH_depresion**.
 
 #### Figura 2: Histograma PG_depresion (elaboración propia a partir de R)
 
@@ -171,13 +171,13 @@ Los histogramas, por su parte, muestran distribuciones sesgadas hacia valores ba
 
 ![](output/corrplotmixed.png){fig-align="center" width="498"}
 
-La Figura 5 presenta una matriz de correlación mixta que permite explorar las asociaciones entre variables de distinta naturaleza: continuas y discretas. Esta matriz combina coeficientes de correlación de Pearson para variables continuas, medidas de asociación para variables categóricas y gráficos de dispersión con líneas de tendencia para facilitar la visualización.v
+La Figura 5 muestra una matriz de correlación mixta, diseñada para explorar asociaciones entre variables de distinta naturaleza, tanto continuas como categóricas. Esta matriz integra coeficientes de correlación de Pearson (para variables continuas), medidas específicas de asociación (para variables categóricas), y gráficos de dispersión con líneas de tendencia que facilitan la interpretación visual de las relaciones.
 
-Se puede apreciar que hay una relación positiva entre la escala de baja autoestima (*PG_autoestima*) y la escala de depresión (*PH_depresion*). Esto significa que, cuando las personas tienen más síntomas depresivos, también tienden a tener una autoestima más baja —recordando que ambas variables están codificadas de forma que un puntaje más alto entienda un menor bienestar— .
+En ella se observa una correlación positiva entre la escala de depresión (PH_depresion) y la de baja autoestima (PG_autoestima). Esto indica que, a medida que aumentan los síntomas depresivos, también tiende a disminuir la autoestima. Es importante recordar que ambas escalas están codificadas de manera que un mayor puntaje representa un menor bienestar.
 
-El **índice de victimizaciones** se creó sumando 31 preguntas de sí o no, donde las personas indican si han vivido alguna situación de violencia o victimización al menos una vez, por lo tanto, comprendemos que, hay una relación negativa con las dos escalas: mientras más victimizaciones se reportan, más alta es la depresión y más baja la autoestima.
+Por otro lado, el índice de victimizaciones fue creado sumando las respuestas a 31 preguntas dicotómicas (sí/no) sobre experiencias de violencia o victimización. Este índice presenta una relación negativa con las dos escalas mencionadas: a mayor cantidad de victimizaciones reportadas, se observa un incremento en los síntomas depresivos y una disminución en la autoestima.
 
-Es importante tener en cuenta que no todas las variables son del mismo tipo (algunas son continuas, otras son sumas de respuestas sí/no), por lo tanto, no todas las relaciones deben interpretarse igual. Aun así, esta matriz ayuda a tener una idea general de cómo se conectan las variables entre sí.
+Cabe destacar que, debido a la naturaleza distinta de las variables —algunas continuas, otras construidas como conteos—, las correlaciones deben interpretarse con cautela. Aun así, esta matriz resulta útil para obtener una visión general de cómo se relacionan las distintas dimensiones medidas en el estudio.
 
 #### Figura 6: Grafico de dispersion controlado según sexo_migrante (elaboración propia a partir de R)
 
