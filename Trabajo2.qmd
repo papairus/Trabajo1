@@ -33,7 +33,7 @@ Este enfoque permite vincular dimensiones estructurales y subjetivas, ofreciendo
 
 ## Variable dependiente: sobre el Indice de Victimizaciones y su construcción
 
-La variable dependiente principal en este análisis es un índice que resume la cantidad total de situaciones de victimización que cada NNA declara haber experimentado a lo largo de su vida. Este índice fue construido a partir de la suma de respuestas afirmativas a una serie de ítems incluidos en el módulo de victimización de la base de datos, los cuales representan distintos tipos de violencia (física, verbal, psicológica, entre otras).
+La variable dependiente principal en este análisis es un índice que resume la cantidad total de situaciones de victimización que cada NNA declara haber experimentado a lo largo de su vida. Este índice fue construido a partir de la suma de respuestas afirmativas (31 variables dicotomicas) a una serie de ítems incluidos en el módulo de victimización de la base de datos, los cuales representan distintos tipos de violencia (física, verbal, psicológica, entre otras).
 
 Se aplicó un criterio de eliminación por pares (pairwise deletion), considerando únicamente aquellos casos con al menos una respuesta válida en las variables constitutivas del índice. El total de experiencias de victimización fue tratado como una variable continua, reflejando el nivel acumulado de exposición a violencia en la vida de cada individuo.
 
@@ -171,52 +171,48 @@ Los histogramas, por su parte, muestran distribuciones sesgadas hacia valores ba
 
 ![](output/corrplotmixed.png){fig-align="center" width="498"}
 
-La matriz de correlación mixta permite explorar las asociaciones entre las variables de interés, combinando coeficientes de correlación para variables continuas, asociaciones para variables categóricas y gráficas de dispersión con tendencias.
+La Figura 5 presenta una matriz de correlación mixta que permite explorar las asociaciones entre variables de distinta naturaleza: continuas y discretas. Esta matriz combina coeficientes de correlación de Pearson para variables continuas, medidas de asociación para variables categóricas y gráficos de dispersión con líneas de tendencia para facilitar la visualización.v
 
-Se observa nuevamente una **correlación positiva entre las escalas de baja autoestima (`PG_autoestima`) y depresión (`PH_depresion`)**, lo que refuerza la evidencia de que, a medida que aumentan los niveles de sintomatología depresiva, también lo hace la baja autoestima.
+Se puede apreciar que hay una relación positiva entre la escala de baja autoestima (*PG_autoestima*) y la escala de depresión (*PH_depresion*). Esto significa que, cuando las personas tienen más síntomas depresivos, también tienden a tener una autoestima más baja —recordando que ambas variables están codificadas de forma que un puntaje más alto entienda un menor bienestar— .
 
-En relación con el índice de victimizaciones, se evidencia una **asociación negativa con ambas escalas**: a mayor cantidad de victimizaciones reportadas, **más síntomas depresivos** y **menor autoestima** (recordando que ambas escalas están codificadas de forma que puntajes altos indican menor bienestar).
+El **índice de victimizaciones** se creó sumando 31 preguntas de sí o no, donde las personas indican si han vivido alguna situación de violencia o victimización al menos una vez, por lo tanto, comprendemos que, hay una relación negativa con las dos escalas: mientras más victimizaciones se reportan, más alta es la depresión y más baja la autoestima.
+
+Es importante tener en cuenta que no todas las variables son del mismo tipo (algunas son continuas, otras son sumas de respuestas sí/no), por lo tanto, no todas las relaciones deben interpretarse igual. Aun así, esta matriz ayuda a tener una idea general de cómo se conectan las variables entre sí.
 
 #### Figura 6: Grafico de dispersion controlado según sexo_migrante (elaboración propia a partir de R)
 
 ![](output/victimizaciones%20segun%20autoestima%20controlado%20con%20sexo_migrante.png){fig-align="center"}
 
-El gráfico presentado ilustra la relación entre los niveles de autoestima (eje x) y el número de victimizaciones experimentadas (eje y) en diferentes grupos demográficos, categorizados por sexo y condición migratoria. Es importante recordar que, según lo explicado, mayores puntuaciones en la escala de autoestima corresponden a una menor autoestima.
+El gráfico muestra la relación entre los niveles de autoestima (eje x) y el número de victimizaciones experimentadas (eje y), diferenciando a niños, niñas y adolescentes (NNA) según sexo y condición migratoria. Es importante recordar que la escala de autoestima está construida de forma que **puntajes más altos indican una autoestima más baja**.
 
-El gráfico muestra una clara tendencia negativa para todos los grupos analizados, lo que indica una relación inversa entre autoestima y victimizaciones: a medida que disminuye la autoestima (valores más altos en el eje x), se incrementa el número de victimizaciones reportadas. Esta relación es consistente en todos los grupos demográficos, aunque con variaciones significativas en la intensidad y punto de partida.
+En todos los grupos demográficos se observa una **tendencia negativa**: a medida que aumenta el puntaje en la escala de autoestima (es decir, disminuye la autoestima), **se incrementa el número de victimizaciones reportadas**. Esta relación es coherente con lo esperado teóricamente: una mayor exposición a situaciones de violencia se asocia con un menor bienestar subjetivo.
 
-**Diferencias por grupo demográfico:**
+#### Diferencias por grupo:
 
--   La categoría "Otro chilenx" (línea azul): presenta la pendiente más pronunciada, comenzando con los niveles más altos de victimización cuando la autoestima es más alta (valores bajos en el eje x), y descendiendo notablemente conforme disminuye la autoestima.
+-   **"Otro chilenx"** (línea azul): muestra la pendiente más pronunciada, lo que indica una fuerte relación entre baja autoestima y alta victimización. Este grupo parte desde niveles de victimización más altos, lo que sugiere una situación de mayor vulnerabilidad.
 
--   Las mujeres, tanto chilenas como migrantes (líneas rosa y dorada respectivamente): muestran patrones similares con pendientes negativas moderadas, sugiriendo que ambos grupos experimentan un incremento comparable en victimizaciones a medida que su autoestima disminuye.
+-   **Mujeres migrantes y chilenas** (líneas dorada y rosa): presentan pendientes negativas moderadas, lo que indica que también enfrentan una relación clara entre victimización y menor autoestima, aunque menos intensa que el grupo anterior.
 
--   Los hombres, tanto chilenos como migrantes (líneas verde y turquesa): presentan niveles iniciales de victimización más bajos que las mujeres y la categoría "otro", aunque mantienen la misma tendencia negativa.
+-   **Hombres migrantes y chilenos** (líneas turquesa y verde): evidencian niveles de victimización más bajos en general, pero mantienen la misma tendencia decreciente.
 
--   La categoría "Otro migrante" (línea violeta) muestra una pendiente menos pronunciada, lo que podría indicar que la relación entre autoestima y victimización es menos intensa para este grupo específico.
+-   **"Otro migrante"** (línea violeta): presenta una pendiente menos pronunciada, lo que sugiere que en este grupo la relación entre victimización y autoestima es más débil o está mediada por otros factores.
 
-#### Sobre la dispersión
+#### Dispersión y variabilidad
 
-La nube de puntos muestra una considerable dispersión en todos los grupos, evidenciando importantes diferencias individuales dentro de cada categoría demográfica. Esta variabilidad sugiere que, aunque existe una tendencia general, otros factores no contemplados en el gráfico podrían estar influyendo en la relación autoestima-victimización.
+La nube de puntos presenta una amplia dispersión en todos los grupos, lo que indica que, aunque existe una tendencia general, **hay importantes diferencias individuales**. Esta variabilidad podría explicarse por factores adicionales como redes de apoyo, resiliencia personal, o distintas formas de vivir y enfrentar las situaciones victimizantes.
 
-#### Relación
+#### Interpetación sustantiva
 
-Los resultados visualizados en el gráfico son coherentes con los constructos teóricos presentados en la investigación. La relación negativa entre autoestima y victimizaciones sugiere que las experiencias de violencia tienen un impacto acumulativo en el bienestar subjetivo de niños, niñas y adolescentes, manifestándose en menores niveles de autoestima cuando aumenta la exposición a situaciones victimizantes.
+Los resultados observados en la Figura 6 refuerzan lo abordado en la matriz de correlaciones: la relación entre **victimizaciones y baja autoestima es negativa**, aunque **débil en intensidad** (r = -0.266), al igual que la relación entre victimizaciones y síntomas depresivos (r = -0.303). Esto indica que, si bien el patrón es consistente con lo teórico, su fuerza estadística es baja.
+
+En cambio, la correlación entre baja autoestima y depresión es **alta y positiva** (r = 0.734), lo que valida el uso conjunto de ambas escalas como indicadores del bienestar psicológico en esta población.
 
 ## Conclusión
 
-El análisis de las experiencias de victimización en niños, niñas y adolescentes (NNA) en Chile, en relación con autoestima, depresión y variables sociodemográficas, revela una situación compleja que requiere atención diferenciada.
+El análisis realizado da cuenta de una relación sistemática entre experiencias de victimización y el bienestar subjetivo de niños, niñas y adolescentes (NNA), expresado en niveles de autoestima y síntomas depresivos. Los resultados evidencian que la violencia no afecta de manera homogénea: existen diferencias relevantes según género y condición migratoria que se expresan tanto en los niveles de victimización como en su impacto subjetivo.
 
-Los resultados muestran que, en general, mayores niveles de victimización se asocian con menores niveles de autoestima en todos los grupos sexo/migrante, siendo esta relación más marcada en la categoría “Otro chilenx” y más moderada en mujeres migrantes y chilenas.
+En todos los grupos analizados, se observa que quienes reportan más experiencias de victimización tienden a presentar una menor autoestima y mayores síntomas depresivos. Sin embargo, estas asociaciones son más marcadas en algunos segmentos, especialmente en quienes se identifican fuera del binarismo de género dentro del grupo chileno, lo que sugiere una mayor exposición a formas específicas de violencia asociadas a normas de género rígidas y a la marginalización de identidades no hegemónicas. Este patrón se replica, en menor intensidad, en mujeres migrantes y chilenas, lo que refuerza la idea de que ciertas posiciones sociales exponen con mayor fuerza a la violencia y, al mismo tiempo, limitan los recursos para afrontarla.
 
-Sin embargo, la matriz de correlaciones muestra asociaciones negativas débiles entre victimizaciones y autoestima (r = -0.266) y entre victimizaciones y depresión (r = -0.303), lo que sugiere que, contra lo esperado, quienes reportan más victimizaciones tienden a presentar mayores niveles de autoestima y menos síntomas depresivos. Este hallazgo podría deberse a factores como mecanismos de resiliencia, subdeclaración de síntomas o limitaciones en las escalas utilizadas.
+El fenómeno de la polivictimización —acumulación de múltiples formas de violencia al menos una vez en la vida— aparece como una condición especialmente crítica, con posibles efectos acumulativos sobre el bienestar psicosocial. Esto no solo subraya la gravedad de los casos más extremos, sino que también **evidencia cómo ciertas trayectorias pueden verse moldeadas por la reiteración de eventos violentos, lo que puede debilitar progresivamente los vínculos, la agencia y la autovaloración personal.** Mas adelante, esperamos profundizar la polivictimización y su comportamiento al ser controlada por variables demográficas y de bienestar.
 
-En contraste, la correlación entre baja autoestima y depresión es alta (r = 0.734), lo que valida el uso combinado de las escalas de Rosenberg y Birleson para evaluar el bienestar subjetivo en esta población.
-
-Desde una perspectiva de vulnerabilidad, se identifican riesgos diferenciados según sexo y origen migrante. El grupo “Otro chilenx” presenta la relación más pronunciada entre victimización y baja autoestima, mientras que mujeres migrantes y chilenas muestran patrones similares con menor intensidad. Estos hallazgos coinciden con investigaciones previas que documentan mayor victimización en niñas migrantes y personas no binarias.
-
-En cuanto a la polivictimización, definida como pertenecer al 10.93% superior en la suma de victimizaciones, se observa que ciertos grupos enfrentan mayor exposición a múltiples formas de violencia, con posibles impactos acumulativos en su bienestar psicosocial.
-
-Los resultados subrayan la necesidad de intervenciones focalizadas que prevengan la victimización y refuercen factores protectores como la autoestima, especialmente en grupos vulnerables. Además, los hallazgos inesperados invitan a investigar más a fondo los mecanismos de afrontamiento y a revisar las herramientas de medición empleadas.
-
-En suma, este estudio aporta evidencia relevante sobre cómo la victimización se vincula de forma diferenciada con el bienestar psicológico según identidad de género y condición migratoria, lo que refuerza la urgencia de políticas públicas interseccionales e inclusivas.
+En conjunto, estos hallazgos invitan a repensar las políticas públicas desde una lógica que no solo busque reducir la victimización, sino que también fortalezca los recursos simbólicos y materiales necesarios para enfrentar sus efectos. Ello implica reconocer que el bienestar de las infancias no puede entenderse fuera del entramado social en el que se produce, el cual es: uno marcado por desigualdades persistentes que se expresan en la vida cotidiana de niños, niñas y adolescentes de manera concreta, diferenciada y acumulativa.
