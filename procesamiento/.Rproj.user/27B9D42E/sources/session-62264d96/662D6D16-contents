@@ -1,0 +1,16 @@
+# Trabajo 3: Regresion lineal - Cuando el género y la migración se cruzan:
+#                                una mirada a la victimización en NNA´s
+
+#Preparando el espacio de trabajo:
+rm(list = ls())
+install.packages("pacman")
+
+pacman::p_load(dplyr, car, sjmisc, sjPlot, sjlabelled, stargazer, 
+							 kableExtra, corrplot, texreg, ggplot2, ggpubr)
+
+
+options(scipen = 999) # para desactivar notacion cientifica
+
+library(pacman)
+
+data <- read_sav("../input/data_orig/BBDD.sav")

@@ -1,0 +1,18 @@
+/* Cambia el tamaño del título principal */
+.reveal .slides h1 {
+  font-size: 1.8em;
+}
+
+/* Cambia el tamaño de los subtítulos de diapositiva (nivel 2) */
+.reveal .slides h2 {
+  font-size: 1.5em;
+}
+
+/* Cambia el tamaño del texto normal */
+.reveal .slides p {
+  font-size: 1.1em;
+}
+/* Cambiar toda la presentación a Times New Roman */
+.reveal .slides {
+  font-family: "Times New Roman", Times, serif;
+}

@@ -1,0 +1,244 @@
+{
+    "sources": [
+        {
+            "DOI": "10.5565/rev/athenea.2447",
+            "author": [
+                {
+                    "family": "Valderrama",
+                    "given": "Caterine Galaz"
+                },
+                {
+                    "family": "Caterine Galaz Valderrama"
+                },
+                {
+                    "family": "Galaz",
+                    "given": "Caterine"
+                },
+                {
+                    "family": "Iskra Pávez"
+                },
+                {
+                    "family": "Pavez",
+                    "given": "Iskra"
+                },
+                {
+                    "family": "Catalina Álvarez"
+                },
+                {
+                    "family": "Alvarez",
+                    "given": "Catalina"
+                },
+                {
+                    "family": "Luciana Hedrera"
+                },
+                {
+                    "family": "Hedrera",
+                    "given": "Luciana"
+                }
+            ],
+            "id": "valderrama2019",
+            "issue": "2",
+            "issued": {
+                "date-parts": [
+                    [
+                        2019,
+                        7,
+                        1
+                    ]
+                ]
+            },
+            "note": "DOI: 10.5565/rev/athenea.2447 MAG ID: 2954543974 S2ID: 0d004cfcda0169e3669b35995fd649d921bc7513",
+            "page": "2447",
+            "title": "Polivictimización y agencia de niños y niñas migrantes en chile desde una mirada interseccional",
+            "type": "article-journal",
+            "volume": "19"
+        },
+        {
+            "DOI": "10.5354/0719-529x.2020.58645",
+            "author": [
+                {
+                    "family": "Pavez-Soto",
+                    "given": "Iskra"
+                },
+                {
+                    "family": "Iskra Pávez Soto"
+                },
+                {
+                    "family": "Pavez-Soto",
+                    "given": "Iskra"
+                },
+                {
+                    "family": "Valderrama",
+                    "given": "Caterine Galaz"
+                },
+                {
+                    "family": "Caterine Galaz Valderrama"
+                },
+                {
+                    "family": "Galaz",
+                    "given": "Caterine"
+                },
+                {
+                    "family": "R Manuel Ansaldo"
+                },
+                {
+                    "family": "Ansaldo",
+                    "given": "R Manuel"
+                }
+            ],
+            "id": "pavez-soto2020",
+            "issue": "2",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020
+                    ]
+                ]
+            },
+            "note": "DOI: 10.5354/0719-529x.2020.58645 MAG ID: 3108839129 S2ID: 0054716399311a2802847b16d86739df014e1d67",
+            "page": "42-60",
+            "title": "Repensando la polivictimización de la infancia migrante en chile",
+            "type": "article-journal",
+            "volume": "35"
+        },
+        {
+            "author": [
+                {
+                    "family": "Pilar Rodríguez Martínez"
+                },
+                {
+                    "family": "Pilar Rodríguez Martínez"
+                },
+                {
+                    "family": "Martínez",
+                    "given": "Pilar Rodríguez"
+                }
+            ],
+            "id": "pilarrodríguezmartínez2012",
+            "issued": {
+                "date-parts": [
+                    [
+                        2012,
+                        2,
+                        14
+                    ]
+                ]
+            },
+            "note": "MAG ID: 1528720133 S2ID: 20484addc0b845196cc1d8bce49fcba7c505eec2",
+            "title": "Hacia una sociología del género y las migraciones : Identificaciones de sexo-género de las mujeres migrantes británicas y marroquíes en almería",
+            "title-short": "Hacia una sociología del género y las migraciones ",
+            "type": "article-journal"
+        },
+        {
+            "author": [
+                {
+                    "family": "Pavez",
+                    "given": "Iskra"
+                }
+            ],
+            "id": "pavez2013",
+            "issued": {
+                "date-parts": [
+                    [
+                        2013,
+                        11,
+                        19
+                    ]
+                ]
+            },
+            "note": "MAG ID: 2784840449 S2ID: 6074870a71729b0dd4f4f242b26b0194e5be8330",
+            "title": "La niñez migrante en chile",
+            "type": "article-journal"
+        },
+        {
+            "DOI": "10.22201/iij.24487872e.2022.22.16964",
+            "author": [
+                {
+                    "family": "Isaac Ravetllat Ballesté"
+                }
+            ],
+            "container-title": "Anuario Mexicano de Derecho Internacional",
+            "id": "isaacravetllatballesté2022",
+            "issued": {
+                "date-parts": [
+                    [
+                        2022,
+                        6,
+                        6
+                    ]
+                ]
+            },
+            "note": "DOI: 10.22201/iij.24487872e.2022.22.16964 MAG ID: 4321637244 S2ID: 7f204094476b63257b112cdf8135e0f75bca8692",
+            "page": "647-678",
+            "title": "Niños, niñas y adolescentes migrantes en chile. Comentarios críticos a la ley de migración y extranjería",
+            "type": "article-journal"
+        },
+        {
+            "DOI": "10.5565/rev/athenea.2447",
+            "author": [
+                {
+                    "family": "Galaz",
+                    "given": "Caterine"
+                },
+                {
+                    "family": "Pavez",
+                    "given": "Iskra"
+                },
+                {
+                    "family": "Alvarez",
+                    "given": "Catalina"
+                },
+                {
+                    "family": "Hedrera",
+                    "given": "Luciana"
+                }
+            ],
+            "id": "galaz2019",
+            "issue": "2",
+            "issued": {
+                "date-parts": [
+                    [
+                        2019,
+                        7,
+                        1
+                    ]
+                ]
+            },
+            "note": "DOI: 10.5565/rev/athenea.2447 MAG ID: 2954543974 S2ID: 0d004cfcda0169e3669b35995fd649d921bc7513",
+            "page": "2447",
+            "title": "Polivictimización y agencia de niños y niñas migrantes en chile desde una mirada interseccional",
+            "type": "article-journal",
+            "volume": "19"
+        },
+        {
+            "author": [
+                {
+                    "family": "Grau Rengifo",
+                    "given": "Olaya"
+                },
+                {
+                    "family": "Díaz Bórquez",
+                    "given": "Daniela"
+                },
+                {
+                    "family": "Muñoz Reyes",
+                    "given": "Carla"
+                }
+            ],
+            "id": "graurengifo2021",
+            "issued": {
+                "date-parts": [
+                    [
+                        2021
+                    ]
+                ]
+            },
+            "note": "MAG ID: 2784840449 S2ID: 6074870a71729b0dd4f4f242b26b0194e5be8330",
+            "page": "1-29",
+            "title": "Niñez migrante en chile: Metasíntesis de experiencias educativas con enfoque de derechos. Revista latinoamericana de ciencias sociales, niñez y juventud",
+            "title-short": "Niñez migrante en chile",
+            "type": "article-journal"
+        }
+    ],
+    "project_biblios": []
+}

@@ -1,0 +1,22 @@
+---
+title: "Cuando el género y la migración se cruzan: una mirada a la victimización en NNA's"
+author: "Baeza; Muñoz; Pérez"
+format:
+  revealjs:
+    theme: simple
+    css: styles.css
+editor: visual
+slideNumber: true
+title-slide-attributes:
+  data-background-image: presentacion.jpg
+  data-background-size: contain
+  data-background-opacity: "0.5"
+bibliography: R-zotero.bib
+link-citations: true
+---
+
+# Subjetividad desde el genero y la migración en nna´s
+
+```{r}
+1 + 1
+```
