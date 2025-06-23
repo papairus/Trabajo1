@@ -181,7 +181,7 @@ Cabe destacar que, debido a la naturaleza distinta de las variables —algunas c
 
 #### Figura 6: Grafico de dispersion controlado según sexo_migrante (elaboración propia a partir de R)
 
-![](output/victimizaciones%20segun%20autoestima%20controlado%20con%20sexo_migrante.png){fig-align="center"}
+![](output/grafico_autoestima.png){fig-align="center"}
 
 El gráfico muestra la relación entre los niveles de autoestima (eje x) y el número de victimizaciones experimentadas (eje y), diferenciando a niños, niñas y adolescentes (NNA) según sexo y condición migratoria. Es importante recordar que la escala de autoestima está construida de forma que **puntajes más altos indican una autoestima más baja**.
 

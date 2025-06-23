@@ -402,19 +402,29 @@ M <- cor(proc_completo %>%
 corrplot.mixed(M, upper = "ellipse", lower = "number",
                tl.col = "black", tl.cex = 1.2, number.cex = 1.1)
 
-# Grafico de dispersion sexo_migrante -------------------------------------------
 
-ggplot(proc_completo, aes(x = PG_autoestima, y = victimizaciones, color = sexo_migrante)) +
+
+# Gráfico 1: Autoestima y victimizaciones controlado por sexo ------------------------------------------------------------
+
+g1 <- ggplot(proc_completo, aes(x = PG_autoestima, y = victimizaciones, color = sexo_migrante)) +
   geom_point(alpha = 0.5) +
   geom_smooth(method = "lm", se = FALSE) +
   labs(title = "Victimizaciones según Autoestima por grupo sexo/migrante",
        x = "Autoestima", y = "Victimizaciones")
 
+ggsave(filename = paste0(output_path, "/grafico_autoestima.png"),
+       plot = g1, width = 8, height = 6, dpi = 300)
 
+# Gráfico 2: Depresión y victimizaciones controlado por sexo --------------------------------------------
+g2 <- ggplot(proc_completo, aes(x = PH_depresion, y = victimizaciones, color = sexo_migrante)) +
+  geom_point(alpha = 0.5) +
+  geom_smooth(method = "lm", se = FALSE) +
+  labs(title = "Victimizaciones según Depresión por grupo sexo/migrante",
+       x = "Depresión", y = "Victimizaciones")
 
-getwd()
-	datos <- read.csv("datos_brutos.csv")  # Carga de datos desde un CSV
-save(datos, file = "procesamiento/Trabajo2.RData")  # Guardar los datos en el archivo .RData
+ggsave(filename = paste0(output_path, "/grafico_depresion.png"),
+       plot = g2, width = 8, height = 6, dpi = 300)
+
 
 
 
