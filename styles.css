@@ -16,3 +16,29 @@
 .reveal .slides {
   font-family: "Times New Roman", Times, serif;
 }
+.small {
+  font-size: 0.8em;
+}
+
+.tiny {
+  font-size: 0.6em;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+.columns {
+  display: flex !important;  /* Forzamos flex para evitar que se anule */
+  gap: 4rem;                 /* Separación entre columnas */
+  flex-wrap: nowrap;         /* Evita que las columnas se bajen */
+}
+
+.column {
+  flex: 1 1 0;               /* Para que las columnas tomen espacio igual */
+  padding: 0 1.5rem;
+  min-width: 0;              /* Evita que el contenido haga que se desborde */
+}
+
+
+

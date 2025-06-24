@@ -6,7 +6,7 @@
 <script src="Presentacion_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="Presentacion_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="Presentacion_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="Presentacion_files/libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<link href="Presentacion_files/libs/quarto-html/quarto-syntax-highlighting-dark-b53751a350365c71b6c909e95f209ed1.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.6.42">
 
   <meta name="author" content="Baeza; Muñoz; Pérez">
@@ -28,8 +28,28 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
-  </style>
-  <link rel="stylesheet" href="Presentacion_files/libs/revealjs/dist/theme/quarto-8f3eebe07241f08526c91a7e9cbef8fd.css">
+    /* CSS for citations */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+      margin-bottom: 0em;
+    }
+    .hanging-indent div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }  </style>
+  <link rel="stylesheet" href="Presentacion_files/libs/revealjs/dist/theme/quarto-949fcd71989a651394be00d684876026.css">
   <link rel="stylesheet" href="styles.css">
   <link href="Presentacion_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="Presentacion_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
@@ -123,11 +143,11 @@
     }
   </style>
 </head>
-<body class="quarto-light">
+<body class="quarto-dark">
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" data-background-image="presentacion.jpg" data-background-opacity="0.5" data-background-size="contain" class="quarto-title-block center">
+<section id="title-slide" data-background-image="niñecesmigrantes.jpeg" data-background-opacity="0.3" data-background-size="contain" class="quarto-title-block center">
   <h1 class="title">Cuando el género y la migración se cruzan: una mirada a la victimización en NNA’s</h1>
 
 <div class="quarto-title-authors">
@@ -139,14 +159,122 @@ Baeza; Muñoz; Pérez
 </div>
 
 </section>
-<section id="subjetividad-desde-el-genero-y-la-migración-en-nnas" class="title-slide slide level1 center">
-<h1>Subjetividad desde el genero y la migración en nna´s</h1>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 2</code></pre>
-</div>
-</div>
+<section class="slide level2">
 
+<h4 id="base-de-datos-y-extracción-de-información">Base de datos y extracción de información</h4>
+<div class="small text-justify">
+<p>El análisis se basa en la Segunda Encuesta de Polivictimización en NNA 2023 (DESUC), que recoge información nacional sobre experiencias de violencia, salud mental y condiciones de vida en niños, niñas y adolescentes.</p>
+</div>
+</section>
+<section class="slide level2">
+
+<h4 id="violencia-y-bienestar-subjetivo-de-las-infancias">Violencia y bienestar subjetivo de las infancias</h4>
+<div class="columns">
+<div class="column small text-justify">
+<h4 id="infancias-en-chile">Infancias en Chile</h4>
+<ul>
+<li>La violencia infantil en Chile es una problemática estructural y extendida: estudios muestran que más del 70% de NNA sufre algún tipo de maltrato <span class="citation" data-cites="galaz2019">(<a href="#/references" role="doc-biblioref" onclick="">Galaz et al. 2019</a>)</span>. Esta situación se complejiza aún más en el caso de las infancias migrantes, quienes enfrentan formas específicas de exclusión y violencia simbólica, institucional y física.</li>
+</ul>
+</div><div class="column small text-justify">
+<h4 id="polivictimización">Polivictimización</h4>
+<ul>
+<li>El 10,93 % de los NNA en la muestra fueron clasificados como polivictimizados, al encontrarse en el percentil 90 o superior del total de victimizaciones reportadas. Este grupo concentra los niveles más altos de exposición acumulada a violencia, lo que implica mayores riesgos para su bienestar psicosocial.</li>
+</ul>
+</div></div>
+</section>
+<section class="slide level2">
+
+<h4 id="construcción-de-variables">Construcción de variables</h4>
+<div class="columns">
+<div class="column small text-justify">
+<ul>
+<li><p><strong>Índice de Victimización</strong> (V.D): El índice de victimización se construyó sumando 31 ítems dicotómicos sobre experiencias de violencia, tratándose como variable continua.</p></li>
+<li><p><strong>Variable Sexo-Migrante:</strong> variable binaria de migración y una combinada de género y origen para el análisis interseccional.</p></li>
+</ul>
+</div><div class="column small text-justify">
+<ul>
+<li><p><strong>Escala de Autoestima</strong> <em>(Rosenberg)</em>: se creó sumando ítems tipo Likert, invirtiendo los negativos para que mayor puntaje refleje menor autoestima</p></li>
+<li><p><strong>Escala de Depresión</strong> <em>(Birleson)</em>: se generó de forma similar, invirtiendo ítems positivos para que mayor puntaje indique más sintomatología depresiva.</p></li>
+</ul>
+</div></div>
+</section>
+<section class="slide level2">
+
+<h4 id="resultados-de-correlación-relación-entre-autoestima-depresión-y-victimizaciones">Resultados de Correlación: Relación entre Autoestima, Depresión y Victimizaciones</h4>
+<div class="panel-tabset small text-justify">
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Matriz de Correlación</a></li><li><a href="#tabset-1-2">Diagrama de Dispersión</a></li></ul>
+<div class="tab-content small text-justify">
+<div id="tabset-1-1">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="output/ggpairs.png" class="quarto-figure quarto-figure-center" width="553"></p>
+</figure>
+</div>
+<p>Se observa una <strong><em>fuerte asociación</em></strong> entre depresión y baja autoestima (r = 0.734), y <strong><em>relaciones negativas más débiles</em></strong> con victimizaciones.</p>
+<hr>
+</div>
+<div id="tabset-1-2">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="output/Rplot.png" class="quarto-figure quarto-figure-center" width="611"></p>
+</figure>
+</div>
+<p>A <em>mayor depresión</em> se asocia una <strong><em>menor autoestima</em></strong>. Además, quienes reportan <strong><em>más victimizaciones</em></strong> tienden a concentrarse en niveles <strong><em>más altos de malestar psicológico</em>.</strong></p>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<h4 id="resultados-distribución-de-victimizaciones-controlado-por-grupos-demograficos">Resultados: Distribución de Victimizaciones controlado por grupos demograficos</h4>
+<div class="panel-tabset small text-justify">
+<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Autoestima</a></li><li><a href="#tabset-2-2">Depresión</a></li></ul>
+<div class="tab-content small text-justify">
+<div id="tabset-2-1">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="output/grafico_autoestima.png" class="quarto-figure quarto-figure-center" width="457"></p>
+</figure>
+</div>
+<p><strong><em>A menor autoestima</em></strong> (mayor puntaje), <strong><em>aumentan las victimizaciones</em></strong> en todos los grupos. El grupo <strong><em>“otro chilenx”</em></strong> presenta <strong>la asociación más fuerte.</strong> Hay gran variabilidad individual.</p>
+<hr>
+</div>
+<div id="tabset-2-2">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="output/grafico_depresion.png" class="quarto-figure quarto-figure-center" width="488"></p>
+</figure>
+</div>
+<p>Se observa una <strong><em>relación negativa</em></strong> entre s<strong><em>íntomas depresivos y victimización</em></strong>, con diferencias según sexo y migración. <strong><em>“Otro chilenx”</em></strong> destaca por <strong><em>mayor sensibilidad a esta relación.</em></strong></p>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<h4 id="conclusiones">Conclusiones</h4>
+<div class="tiny text-justify">
+<ul>
+<li class="fragment"><p>El derecho internacional ha establecido obligaciones específicas para garantizar la protección integral de niñas y niños migrantes, especialmente en contextos de desprotección o irregularidad. <span class="citation" data-cites="ravetllatballesté2022">(<a href="#/references" role="doc-biblioref" onclick="">Ravetllat Ballesté 2022</a>)</span></p></li>
+<li class="fragment"><p>La victimización se asocia sistemáticamente con menor autoestima y más síntomas depresivos en NNA.</p></li>
+<li class="fragment"><p>Este impacto varía según género y migración, afectando más a personas no binarias y mujeres migrantes.</p></li>
+<li class="fragment"><p>La polivictimización agrava el malestar psicosocial de forma acumulativa.</p></li>
+<li class="fragment"><p>Se requiere un enfoque estructural que no solo prevenga la violencia, sino que fortalezca recursos de afrontamiento.</p></li>
+<li class="fragment"><p>Futuras investigaciones deben priorizar variables más robustas, como la depresión, para un análisis más profundo.</p></li>
+</ul>
+</div>
+</section>
+<section class="slide level2 smaller scrollable" id="references">
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-galaz2019" class="csl-entry" role="listitem">
+Galaz, Caterine, Iskra Pavez, Catalina Alvarez, and Luciana Hedrera. 2019. <span>“Polivictimización y Agencia de Niños y Niñas Migrantes En Chile Desde Una Mirada Interseccional”</span> 19 (2): 2447. <a href="https://doi.org/10.5565/rev/athenea.2447">https://doi.org/10.5565/rev/athenea.2447</a>.
+</div>
+<div id="ref-ravetllatballesté2022" class="csl-entry" role="listitem">
+Ravetllat Ballesté, Isaac. 2022. <span>“Niños, Niñas y Adolescentes Migrantes En Chile. Comentarios Críticos a La Ley de Migración y Extranjería.”</span> <em>Anuario Mexicano de Derecho Internacional</em>, June, 647–78. <a href="https://doi.org/10.22201/iij.24487872e.2022.22.16964">https://doi.org/10.22201/iij.24487872e.2022.22.16964</a>.
+</div>
+</div>
 </section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
@@ -363,82 +491,6 @@ Baeza; Muñoz; Pérez
         ]
       });
     </script>
-    
-
-    <script>
-
-      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
-
-      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
-
-      // slide changes (different for each slide format).
-
-      (function () {
-
-        // dispatch for htmlwidgets
-
-        function fireSlideEnter() {
-
-          const event = window.document.createEvent("Event");
-
-          event.initEvent("slideenter", true, true);
-
-          window.document.dispatchEvent(event);
-
-        }
-
-    
-
-        function fireSlideChanged(previousSlide, currentSlide) {
-
-          fireSlideEnter();
-
-    
-
-          // dispatch for shiny
-
-          if (window.jQuery) {
-
-            if (previousSlide) {
-
-              window.jQuery(previousSlide).trigger("hidden");
-
-            }
-
-            if (currentSlide) {
-
-              window.jQuery(currentSlide).trigger("shown");
-
-            }
-
-          }
-
-        }
-
-    
-
-        // hookup for slidy
-
-        if (window.w3c_slidy) {
-
-          window.w3c_slidy.add_observer(function (slide_num) {
-
-            // slide_num starts at position 1
-
-            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
-
-          });
-
-        }
-
-    
-
-      })();
-
-    </script>
-
-    
-
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {
