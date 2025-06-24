@@ -17,7 +17,7 @@ link-citations: true
 
 #### Base de datos y extracción de información
 
-::: {.tiny .text-justify}
+::: {.small .text-justify}
 El análisis se basa en la Segunda Encuesta de Polivictimización en NNA 2023 (DESUC), que recoge información nacional sobre experiencias de violencia, salud mental y condiciones de vida en niños, niñas y adolescentes.
 :::
 
@@ -26,13 +26,13 @@ El análisis se basa en la Segunda Encuesta de Polivictimización en NNA 2023 (D
 #### Violencia y bienestar subjetivo de las infancias
 
 ::::: columns
-::: {.column .tiny .text-justify}
+::: {.column .small .text-justify}
 #### Infancias en Chile
 
 -    La violencia infantil en Chile es una problemática estructural y extendida: estudios muestran que más del 70% de NNA sufre algún tipo de maltrato [@galaz2019]. Esta situación se complejiza aún más en el caso de las infancias migrantes, quienes enfrentan formas específicas de exclusión y violencia simbólica, institucional y física.
 :::
 
-::: {.column .tiny .text-justify}
+::: {.column .small .text-justify}
 #### Polivictimización
 
 -    El 10,93 % de los NNA en la muestra fueron clasificados como polivictimizados, al encontrarse en el percentil 90 o superior del total de victimizaciones reportadas. Este grupo concentra los niveles más altos de exposición acumulada a violencia, lo que implica mayores riesgos para su bienestar psicosocial.
@@ -44,13 +44,13 @@ El análisis se basa en la Segunda Encuesta de Polivictimización en NNA 2023 (D
 #### Construcción de variables
 
 ::::: columns
-::: {.column .tiny .text-justify}
+::: {.column .small .text-justify}
 -    **Índice de Victimización** (V.D): El índice de victimización se construyó sumando 31 ítems dicotómicos sobre experiencias de violencia, tratándose como variable continua.
 
 -    **Variable Sexo-Migrante:** variable binaria de migración y una combinada de género y origen para el análisis interseccional.
 :::
 
-::: {.column .tiny .text-justify}
+::: {.column .small .text-justify}
 -    **Escala de Autoestima** *(Rosenberg)*: se creó sumando ítems tipo Likert, invirtiendo los negativos para que mayor puntaje refleje menor autoestima
 
 -    **Escala de Depresión** *(Birleson)*: se generó de forma similar, invirtiendo ítems positivos para que mayor puntaje indique más sintomatología depresiva.
@@ -61,7 +61,7 @@ El análisis se basa en la Segunda Encuesta de Polivictimización en NNA 2023 (D
 
 #### Resultados de Correlación: Relación entre Autoestima, Depresión y Victimizaciones
 
-::: {.panel-tabset .tiny .text-justify}
+::: {.panel-tabset .small .text-justify}
 #### Matriz de Correlación
 
 ![](output/ggpairs.png){fig-align="center" width="553"}
@@ -81,7 +81,7 @@ A *mayor depresión* se asocia una ***menor autoestima***. Además, quienes repo
 
 #### Resultados: Distribución de Victimizaciones controlado por grupos demograficos
 
-::: {.panel-tabset .tiny .text-justify}
+::: {.panel-tabset .small .text-justify}
 #### Autoestima
 
 ![](output/grafico_autoestima.png){fig-align="center" width="457"}
@@ -101,7 +101,7 @@ Se observa una ***relación negativa*** entre s***íntomas depresivos y victimiz
 
 #### Conclusiones
 
-::: {.incremental .tiny .text-justify}
+::: {.incremental .small .text-justify}
 -   El derecho internacional ha establecido obligaciones específicas para garantizar la protección integral de niñas y niños migrantes, especialmente en contextos de desprotección o irregularidad. [@ravetllatballesté2022]
 
 -   La victimización se asocia sistemáticamente con menor autoestima y más síntomas depresivos en NNA.
