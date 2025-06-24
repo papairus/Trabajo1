@@ -32,7 +32,7 @@ El análisis se basa en la Segunda Encuesta de Polivictimización en NNA 2023 (D
 -    La violencia infantil en Chile es una problemática estructural y extendida: estudios muestran que más del 70% de NNA sufre algún tipo de maltrato [@galaz2019]. Esta situación se complejiza aún más en el caso de las infancias migrantes, quienes enfrentan formas específicas de exclusión y violencia simbólica, institucional y física.
 :::
 
-::: {.column .small .text-justify}
+::: {.column .tiny .text-justify}
 #### Polivictimización
 
 -    El 10,93 % de los NNA en la muestra fueron clasificados como polivictimizados, al encontrarse en el percentil 90 o superior del total de victimizaciones reportadas. Este grupo concentra los niveles más altos de exposición acumulada a violencia, lo que implica mayores riesgos para su bienestar psicosocial.
