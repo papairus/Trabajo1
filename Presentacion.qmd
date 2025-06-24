@@ -17,7 +17,7 @@ link-citations: true
 
 #### Base de datos y extracción de información
 
-::: {.small .text-justify}
+::: {.tiny .text-justify}
 El análisis se basa en la Segunda Encuesta de Polivictimización en NNA 2023 (DESUC), que recoge información nacional sobre experiencias de violencia, salud mental y condiciones de vida en niños, niñas y adolescentes.
 :::
 
@@ -26,7 +26,7 @@ El análisis se basa en la Segunda Encuesta de Polivictimización en NNA 2023 (D
 #### Violencia y bienestar subjetivo de las infancias
 
 ::::: columns
-::: {.column .small .text-justify}
+::: {.column .tiny .text-justify}
 #### Infancias en Chile
 
 -    La violencia infantil en Chile es una problemática estructural y extendida: estudios muestran que más del 70% de NNA sufre algún tipo de maltrato [@galaz2019]. Esta situación se complejiza aún más en el caso de las infancias migrantes, quienes enfrentan formas específicas de exclusión y violencia simbólica, institucional y física.
@@ -44,13 +44,13 @@ El análisis se basa en la Segunda Encuesta de Polivictimización en NNA 2023 (D
 #### Construcción de variables
 
 ::::: columns
-::: {.column .small .text-justify}
+::: {.column .tiny .text-justify}
 -    **Índice de Victimización** (V.D): El índice de victimización se construyó sumando 31 ítems dicotómicos sobre experiencias de violencia, tratándose como variable continua.
 
 -    **Variable Sexo-Migrante:** variable binaria de migración y una combinada de género y origen para el análisis interseccional.
 :::
 
-::: {.column .small .text-justify}
+::: {.column .tiny .text-justify}
 -    **Escala de Autoestima** *(Rosenberg)*: se creó sumando ítems tipo Likert, invirtiendo los negativos para que mayor puntaje refleje menor autoestima
 
 -    **Escala de Depresión** *(Birleson)*: se generó de forma similar, invirtiendo ítems positivos para que mayor puntaje indique más sintomatología depresiva.
@@ -61,7 +61,7 @@ El análisis se basa en la Segunda Encuesta de Polivictimización en NNA 2023 (D
 
 #### Resultados de Correlación: Relación entre Autoestima, Depresión y Victimizaciones
 
-::: {.panel-tabset .small .text-justify}
+::: {.panel-tabset .tiny .text-justify}
 #### Matriz de Correlación
 
 ![](output/ggpairs.png){fig-align="center" width="553"}
@@ -81,7 +81,7 @@ A *mayor depresión* se asocia una ***menor autoestima***. Además, quienes repo
 
 #### Resultados: Distribución de Victimizaciones controlado por grupos demograficos
 
-::: {.panel-tabset .small .text-justify}
+::: {.panel-tabset .tiny .text-justify}
 #### Autoestima
 
 ![](output/grafico_autoestima.png){fig-align="center" width="457"}
